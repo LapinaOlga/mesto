@@ -1,0 +1,15 @@
+.element__button {
+    min-height: 19px;
+    background: transparent;
+    border: none;
+    padding: 0;
+    transition: opacity 200ms ease-in-out;
+}
+
+.element__button:hover {
+    opacity: 0.6;
+}
+
+.element__button:active {
+    background: #000000;
+}

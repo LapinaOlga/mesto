@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="d8191f3e-c4fc-4e1f-b424-62f4b7d624a9" name="Default Changelist" comment="Добавлен  gitignore">
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager">
+    <option name="groupingKeys">
+      <option value="directory" />
+    </option>
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Rebase.Settings">
+    <option name="NEW_BASE" value="HEAD~5" />
+    <option name="OPTIONS">
+      <set>
+        <option value="INTERACTIVE" />
+      </set>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="feature/pr" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitRewordedCommitMessages">
+    <option name="onto" value="32c4e497dae3b8e734957183b816a50c11951331" />
+  </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="hiddenUrls">
+      <set>
+        <option value="https://github.com/LapinaOlga/mesto" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectId" id="2LrbCQoyeDqOb9nhPJSpayTWrx0" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/images" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/blocks" />
+      <recent name="$PROJECT_DIR$/blocks/profile" />
+      <recent name="$PROJECT_DIR$/blocks/profile/__info" />
+      <recent name="$PROJECT_DIR$/blocks/profile-info" />
+      <recent name="$PROJECT_DIR$/blocks/header" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d8191f3e-c4fc-4e1f-b424-62f4b7d624a9" name="Default Changelist" comment="" />
+      <created>1676632020955</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1676632020955</updated>
+      <workItem from="1676632022513" duration="60539000" />
+      <workItem from="1676988297872" duration="25231000" />
+      <workItem from="1677246560219" duration="32094000" />
+      <workItem from="1677606160147" duration="326000" />
+      <workItem from="1677606498498" duration="25000" />
+    </task>
+    <task id="LOCAL-00001" summary="First commit">
+      <created>1677066119615</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1677066119615</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Добавлен  gitignore">
+      <created>1677066407806</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1677066407806</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Исправлены ошибки">
+      <created>1677601047468</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1677601047468</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Тест веток">
+      <created>1677601308165</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1677601308165</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Тест веток 2">
+      <created>1677601488320</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1677601488320</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Тест веток 3">
+      <created>1677601566338</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1677601566338</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Тест веток 4">
+      <created>1677602423015</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1677602423015</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Тест веток 4 исправлены ошибки после ревью">
+      <created>1677602629758</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1677602629758</updated>
+    </task>
+    <task id="LOCAL-00009" summary="свыма">
+      <created>1677603433789</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1677603433789</updated>
+    </task>
+    <task id="LOCAL-00010" summary="длысрирчс">
+      <created>1677603505033</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1677603505033</updated>
+    </task>
+    <task id="LOCAL-00011" summary="длысрирчс">
+      <created>1677603649373</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1677603649373</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="First commit" />
+    <MESSAGE value="Добавлен  gitignore" />
+    <MESSAGE value="Исправлены ошибки" />
+    <MESSAGE value="Тест веток" />
+    <MESSAGE value="Тест веток 2" />
+    <MESSAGE value="Тест веток 3" />
+    <MESSAGE value="Тест веток 4" />
+    <MESSAGE value="Тест веток 4 исправлены ошибки после ревью" />
+    <MESSAGE value="свыма" />
+    <MESSAGE value="длысрирчс" />
+    <option name="LAST_COMMIT_MESSAGE" value="длысрирчс" />
+  </component>
+</project>

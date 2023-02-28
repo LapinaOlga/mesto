@@ -1,0 +1,12 @@
+.element__image {
+    max-width: 282px;
+    padding-bottom: 25px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+@media screen and (min-width: 320px) and (max-width: 600px){
+    .element__image {
+        padding-bottom: 20px;
+    }
+}
