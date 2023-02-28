@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d8191f3e-c4fc-4e1f-b424-62f4b7d624a9" name="Default Changelist" comment="Добавлен  gitignore">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -60,7 +61,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/images" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.tslint" value="project" />
@@ -91,8 +92,7 @@
       <workItem from="1676632022513" duration="60539000" />
       <workItem from="1676988297872" duration="25231000" />
       <workItem from="1677246560219" duration="32094000" />
-      <workItem from="1677606160147" duration="326000" />
-      <workItem from="1677606498498" duration="25000" />
+      <workItem from="1677606160147" duration="1412000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1677066119615</created>
@@ -171,7 +171,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677603649373</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Первый коммит">
+      <created>1677606610535</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1677606610535</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -200,6 +207,7 @@
     <MESSAGE value="Тест веток 4 исправлены ошибки после ревью" />
     <MESSAGE value="свыма" />
     <MESSAGE value="длысрирчс" />
-    <option name="LAST_COMMIT_MESSAGE" value="длысрирчс" />
+    <MESSAGE value="Первый коммит" />
+    <option name="LAST_COMMIT_MESSAGE" value="Первый коммит" />
   </component>
 </project>
