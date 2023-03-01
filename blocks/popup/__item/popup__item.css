@@ -1,19 +1,19 @@
-.popup__profession {
+.popup__item {
     width: 100%;
     font-weight: 400;
     font-size: 14px;
     line-height: 1.2;
     color: #000000;
     border: none;
+    padding: 0;
 }
 
-.popup__profession:focus-visible {
+.popup__item:focus-visible {
     outline: none;
 }
 
 @media screen and (min-width: 320px) and (max-width: 600px) {
-    .popup__profession {
+    .popup__item {
         min-width: 238px;
-        font-size: 14px;
     }
 }

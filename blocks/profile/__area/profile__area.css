@@ -9,5 +9,6 @@
         column-gap: 10px;
         padding-top: 22px;
         max-width: 282px;
+        transform: translateX(13px);
     }
 }

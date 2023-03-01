@@ -18,14 +18,14 @@
             <div class="profile__info">
                 <div class="profile__area">
                     <h1 class="profile__title">Жак-Ив Кусто</h1>
-                    <button class="profile__edit-button">
+                    <button class="profile__edit-button" type="button">
                         <img class="profile__edit-button-image" src="images/vector-pencil.svg"
                              alt="Картинка карандаш">
                     </button>
                 </div>
                 <p class="profile__subtitle">Исследователь океана</p>
             </div>
-            <button class="profile__button">
+            <button class="profile__button" type="button">
                 <img class="profile__button-image" src="images/vector-cross.svg" alt="Картинка крест">
             </button>
         </section>
@@ -34,7 +34,7 @@
                 <img src="images/Karachayevsk.jpg" alt="Фото Карачаевска" class="element__image">
                 <div class="element__area">
                     <h2 class="element__title">Карачаевск</h2>
-                    <button class="element__button">
+                    <button class="element__button" type="button">
                         <img src="images/vector-heart.svg" alt="Сердце">
                     </button>
                 </div>
@@ -43,7 +43,7 @@
                 <img src="images/Elbrus.jpg" alt="Фото Эльбруса" class="element__image">
                 <div class="element__area">
                     <h2 class="element__title">Гора Эльбрус</h2>
-                    <button class="element__button">
+                    <button class="element__button" type="button">
                         <img src="images/vector-heart.svg" alt="Сердце">
                     </button>
                 </div>
@@ -52,34 +52,34 @@
                 <img src="images/Dombay.jpg" alt="Фото Домбай" class="element__image">
                 <div class="element__area">
                     <h2 class="element__title">Домбай</h2>
-                    <button class="element__button">
+                    <button class="element__button" type="button">
                         <img src="images/vector-heart.svg" alt="Сердце">
                     </button>
                 </div>
             </article>
             <article class="element">
-                <img src="images/Elbrus.jpg" alt="" class="element__image">
+                <img src="images/Elbrus.jpg" alt="Фото Эльбруса" class="element__image">
                 <div class="element__area">
                     <h2 class="element__title">Гора Эльбрус</h2>
-                    <button class="element__button">
+                    <button class="element__button" type="button">
                         <img src="images/vector-heart.svg" alt="Сердце">
                     </button>
                 </div>
             </article>
             <article class="element">
-                <img src="images/Dombay.jpg" alt="" class="element__image">
+                <img src="images/Dombay.jpg" alt="Фото Домбай" class="element__image">
                 <div class="element__area">
                     <h2 class="element__title">Домбай</h2>
-                    <button class="element__button">
+                    <button class="element__button" type="button">
                         <img src="images/vector-heart.svg" alt="Сердце">
                     </button>
                 </div>
             </article>
             <article class="element">
-                <img src="images/Karachayevsk.jpg" alt="" class="element__image">
+                <img src="images/Karachayevsk.jpg" alt="Фото Карачаевска" class="element__image">
                 <div class="element__area">
                     <h2 class="element__title">Карачаево-Черкессия</h2>
-                    <button class="element__button">
+                    <button class="element__button" type="button">
                         <img src="images/vector-heart.svg" alt="Сердце">
                     </button>
                 </div>
@@ -96,23 +96,25 @@
             <img class="popup__icon-close-image" src="images/сlose-icon.png" alt="Закрывание окна">
         </button>
         <h2 class="popup__title">Редактировать профиль</h2>
-        <div class="popup__area">
-            <div class="popup__field">
-                <label>
-                    <input type="text" class="popup__name" value="Жак-Ив Кусто" maxlength="40">
-                </label>
-                <div class="popup__line"></div>
+        <form name="profileForm">
+            <div class="popup__area">
+                <div class="popup__field">
+                    <label>
+                        <input type="text" class="popup__item popup__item_name" maxlength="40">
+                    </label>
+                    <div class="popup__line"></div>
+                </div>
+                <div class="popup__field">
+                    <label>
+                        <input type="text" class="popup__item popup__item_profession" maxlength="40">
+                    </label>
+                    <div class="popup__line"></div>
+                </div>
             </div>
-            <div class="popup__field">
-                <label>
-                    <input type="text" class="popup__profession" value="Исследователь океана" maxlength="40">
-                </label>
-                <div class="popup__line"></div>
-            </div>
-        </div>
-        <button class="popup__button">Сохранить</button>
+            <button class="popup__button" type="submit">Сохранить</button>
+        </form>
     </div>
 </div>
-<script src="index.js"></script>
+<script src="scripts/index.js"></script>
 </body>
 </html>
