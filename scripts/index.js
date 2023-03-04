@@ -21,9 +21,9 @@ function closePopup() {
 }
 profileForm.addEventListener('submit', function (event) {
     event.preventDefault();
-    closePopup();
     profileTitle.textContent = inputUserName.value;
     profileSubtitle.textContent = inputUserProfession.value;
+    closePopup();
 });
 
 profileEditButton.addEventListener('click', function () {

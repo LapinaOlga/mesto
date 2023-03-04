@@ -1,15 +1,19 @@
 .element__button {
     min-height: 19px;
-    background: transparent;
     border: none;
     padding: 0;
     transition: opacity 200ms ease-in-out;
+    background-image: url("../../../images/vector-heart.svg");
+    min-width: 22px;
+    background-repeat: no-repeat;
+    background-color: transparent;
 }
 
 .element__button:hover {
     opacity: 0.5;
+    cursor: pointer;
 }
 
 .element__button:active {
-    background: #000000;
+    background-image: url("../../../images/vector-heart-black.svg");
 }

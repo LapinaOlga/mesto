@@ -3,6 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="d8191f3e-c4fc-4e1f-b424-62f4b7d624a9" name="Default Changelist" comment="Добавлен  gitignore">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/element/__area/element__area.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/element/__area/element__area.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/element/__button/element__button.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/element/__button/element__button.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/profile/__button/profile__button.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/profile/__button/profile__button.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/profile/__edit-button/profile__edit-button.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/profile/__edit-button/profile__edit-button.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/index.js" afterDir="false" />
     </list>
@@ -62,7 +66,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/images" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -97,7 +101,11 @@
       <workItem from="1676988297872" duration="25231000" />
       <workItem from="1677246560219" duration="32094000" />
       <workItem from="1677606160147" duration="1802000" />
-      <workItem from="1677608886291" duration="23058000" />
+      <workItem from="1677608886291" duration="24211000" />
+      <workItem from="1677747955321" duration="2689000" />
+      <workItem from="1677923017050" duration="1633000" />
+      <workItem from="1677929895346" duration="2018000" />
+      <workItem from="1677932077670" duration="3176000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1677066119615</created>
@@ -211,7 +219,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677697089440</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Исправлены ошибки после второго ревью">
+      <created>1677706088901</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1677706088901</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -245,6 +260,7 @@
     <MESSAGE value="Прописан README.md, добавлены правки" />
     <MESSAGE value="Исправлены ошибки после автотестов" />
     <MESSAGE value="Исправлены ошибки после первого ревью" />
-    <option name="LAST_COMMIT_MESSAGE" value="Исправлены ошибки после первого ревью" />
+    <MESSAGE value="Исправлены ошибки после второго ревью" />
+    <option name="LAST_COMMIT_MESSAGE" value="Исправлены ошибки после второго ревью" />
   </component>
 </project>
