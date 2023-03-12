@@ -14,6 +14,3 @@
     cursor: pointer;
 }
 
-.element__button:active {
-    background-image: url("../../../images/vector-heart-black.svg");
-}

@@ -2,12 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d8191f3e-c4fc-4e1f-b424-62f4b7d624a9" name="Default Changelist" comment="Добавлен  gitignore">
+      <change afterPath="$PROJECT_DIR$/blocks/element/__button/_active/element__button_active.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/element/__area/element__area.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/element/__area/element__area.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blocks/element/__button/element__button.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/element/__button/element__button.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/profile/__button/profile__button.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/profile/__button/profile__button.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/profile/__edit-button/profile__edit-button.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/profile/__edit-button/profile__edit-button.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/element/__image/element__image.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/element/__image/element__image.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -26,6 +26,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="JavaScript File" />
         <option value="CSS File" />
       </list>
     </option>
@@ -89,6 +90,11 @@
       <recent name="$PROJECT_DIR$/blocks/profile/__info" />
     </key>
   </component>
+  <component name="RunManager">
+    <configuration name="index.js" type="NodeJSConfigurationType" path-to-node="/usr/local/opt/node@14/bin/node" nameIsGenerated="true" path-to-js-file="scripts/index.js" working-dir="$PROJECT_DIR$">
+      <method v="2" />
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -105,7 +111,11 @@
       <workItem from="1677747955321" duration="2689000" />
       <workItem from="1677923017050" duration="1633000" />
       <workItem from="1677929895346" duration="2018000" />
-      <workItem from="1677932077670" duration="3176000" />
+      <workItem from="1677932077670" duration="4225000" />
+      <workItem from="1678026163845" duration="626000" />
+      <workItem from="1678107521776" duration="198000" />
+      <workItem from="1678109381079" duration="19000" />
+      <workItem from="1678392670616" duration="71828000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1677066119615</created>
@@ -226,7 +236,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677706088901</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Исправлены недочеты">
+      <created>1677935541925</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1677935541925</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -261,6 +278,7 @@
     <MESSAGE value="Исправлены ошибки после автотестов" />
     <MESSAGE value="Исправлены ошибки после первого ревью" />
     <MESSAGE value="Исправлены ошибки после второго ревью" />
-    <option name="LAST_COMMIT_MESSAGE" value="Исправлены ошибки после второго ревью" />
+    <MESSAGE value="Исправлены недочеты" />
+    <option name="LAST_COMMIT_MESSAGE" value="Исправлены недочеты" />
   </component>
 </project>
