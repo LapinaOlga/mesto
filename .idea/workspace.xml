@@ -2,10 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d8191f3e-c4fc-4e1f-b424-62f4b7d624a9" name="Default Changelist" comment="Добавлен  gitignore">
-      <change afterPath="$PROJECT_DIR$/blocks/element/__button/_active/element__button_active.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blocks/element/__image-button/element__image-button.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blocks/element/trash-button/element__trash-button.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blocks/popup/__container/_image/popup__container_image.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blocks/popup/__description/popup__description.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blocks/popup/__image/popup__image.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/element/__button/element__button.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/element/__button/element__button.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/element/__image/element__image.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/element/__image/element__image.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/index.js" afterDir="false" />
@@ -116,6 +118,8 @@
       <workItem from="1678107521776" duration="198000" />
       <workItem from="1678109381079" duration="19000" />
       <workItem from="1678392670616" duration="71828000" />
+      <workItem from="1678626647960" duration="85000" />
+      <workItem from="1678634992243" duration="9768000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1677066119615</created>
@@ -243,7 +247,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677935541925</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Реализованы карточки и лайки">
+      <created>1678626695591</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1678626695591</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -279,6 +290,7 @@
     <MESSAGE value="Исправлены ошибки после первого ревью" />
     <MESSAGE value="Исправлены ошибки после второго ревью" />
     <MESSAGE value="Исправлены недочеты" />
-    <option name="LAST_COMMIT_MESSAGE" value="Исправлены недочеты" />
+    <MESSAGE value="Реализованы карточки и лайки" />
+    <option name="LAST_COMMIT_MESSAGE" value="Реализованы карточки и лайки" />
   </component>
 </project>

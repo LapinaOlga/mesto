@@ -4,8 +4,10 @@ const profileEditButton = document.querySelector('.profile__edit-button');
 const profileButton = document.querySelector('.profile__button');
 const profilePopup = document.querySelector('.profile-popup');
 const cardPopup = document.querySelector('.card-popup');
+const imagePopup = document.querySelector('.image-popup');
 const profilePopupIconClose = profilePopup.querySelector('.popup__icon-close');
 const cardPopupIconClose = cardPopup.querySelector('.popup__icon-close');
+const imagePopupIconClose  = imagePopup.querySelector('.popup__icon-close');
 const inputUserName = document.querySelector('input.popup__item_el_name');
 const profileTitle = document.querySelector('.profile__title');
 const inputUserProfession = document.querySelector('input.popup__item_el_profession');
@@ -14,6 +16,12 @@ const profileForm = document.querySelector('.profile-popup form');
 const cardForm = document.querySelector('.card-popup form');
 const inputLocation = document.querySelector('input.popup__item_el_location');
 const inputLink = document.querySelector('input.popup__item_el_link');
+const cardElements = document.querySelector('.elements');
+const cardTemplate = document.querySelector('#elements').content;
+const cardElement = cardTemplate.querySelector('.element');
+const cardImage = cardElement.querySelector('.element__image');
+const cardArea = cardElement.querySelector('.element__area');
+const cardTitle = cardArea.querySelector('.element__title');
 
 
 // Общая функция закрытия попапа
@@ -57,14 +65,14 @@ cardPopupIconClose.addEventListener('click', function () {
     closePopup(cardPopup);
 });
 
+//Попап для картинки
+
+imagePopupIconClose.addEventListener('click', function () {
+    closePopup(imagePopup);
+});
+
 
 // Создаем карточки
-const cardElements = document.querySelector('.elements');
-const cardTemplate = document.querySelector('#elements').content;
-const cardElement = cardTemplate.querySelector('.element');
-const cardImage = cardElement.querySelector('.element__image');
-const cardArea = cardElement.querySelector('.element__area');
-const cardTitle = cardArea.querySelector('.element__title');
 
 const initialCards = [
     {
@@ -106,6 +114,24 @@ function addCard(card) {
     addLike.addEventListener('click', function (event) {
         event.target.classList.toggle('element__button_active');
     })
+
+    //Реализуем удаление карточки при клике на trash
+    const trashButton = newCard.querySelector('.element__trash-button')
+    trashButton.addEventListener('click', function () {
+        const item = trashButton.closest('.element');
+        item.remove();
+    })
+
+    //Реализуем открытие картинки-попапа
+    const img = newCard.querySelector('.element__image')
+    img.addEventListener('click', function () {
+        openPopup(imagePopup);
+        const popupImage = document.querySelector('.popup__image')
+        const popupDescription = document.querySelector('.popup__description')
+        popupImage.src = card.link;
+        popupDescription.textContent = card.name;
+    })
+
 }
 
 for (let i = 0; i < initialCards.length; i++) {
@@ -121,7 +147,10 @@ cardForm.addEventListener('submit', function (event) {
     });
 
     const cards = cardElements.querySelectorAll('.element');
-    cards[cards.length-1].remove()
+
+    if (cards.length > 6) {
+        cards[cards.length - 1].remove()
+    }
 
 
     closePopup(cardPopup);
