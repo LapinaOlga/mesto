@@ -152,7 +152,6 @@ cardForm.addEventListener('submit', function (event) {
         cards[cards.length - 1].remove()
     }
 
-
     closePopup(cardPopup);
     inputLink.value = null
     inputLocation.value = null
