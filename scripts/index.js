@@ -4,22 +4,13 @@ const profileEditButton = document.querySelector('.profile__edit-button');
 const profileButton = document.querySelector('.profile__button');
 const profilePopup = document.querySelector('.profile-popup');
 const cardPopup = document.querySelector('.card-popup');
-const imagePopup = document.querySelector('.image-popup');
 const inputUserName = document.querySelector('input.popup__item_el_name');
 const profileTitle = document.querySelector('.profile__title');
 const inputUserProfession = document.querySelector('input.popup__item_el_profession');
 const profileSubtitle = document.querySelector('.profile__subtitle');
 const profileForm = document.querySelector('.profile-popup form');
 const cardForm = document.querySelector('.card-popup form');
-const inputLocation = document.querySelector('input.popup__item_el_location');
-const inputLink = document.querySelector('input.popup__item_el_link');
 const cardElements = document.querySelector('.elements');
-const cardTemplate = document.querySelector('#elements').content;
-const cardElement = cardTemplate.querySelector('.element');
-const cardImage = cardElement.querySelector('.element__image');
-const cardArea = cardElement.querySelector('.element__area');
-const cardTitle = cardArea.querySelector('.element__title');
-
 
 // Общая функция закрытия попапа
 function closePopup(popupClassName) {
@@ -95,6 +86,10 @@ const initialCards = [
 // Добавление карточек
 
 function addCard(card) {
+    const cardTemplate = document.querySelector('#elements').content;
+    const cardElement = cardTemplate.querySelector('.element');
+    const cardImage = cardElement.querySelector('.element__image');
+    const cardTitle =cardElement.querySelector('.element__title');
     cardImage.src = card.link;
     cardTitle.textContent = card.name;
     const newCard = cardElement.cloneNode(true);
@@ -116,6 +111,7 @@ function addCard(card) {
     //Реализуем открытие картинки-попапа
     const img = newCard.querySelector('.element__image')
     img.addEventListener('click', function () {
+        const imagePopup = document.querySelector('.image-popup');
         openPopup(imagePopup);
         const popupImage = document.querySelector('.popup__image')
         const popupDescription = document.querySelector('.popup__description')
@@ -132,6 +128,8 @@ initialCards.forEach(function (item) {
 // Создание новой карточки из попапа
 cardForm.addEventListener('submit', function (event) {
     event.preventDefault();
+    const inputLocation = document.querySelector('input.popup__item_el_location');
+    const inputLink = document.querySelector('input.popup__item_el_link');
     addCard({
         link: inputLink.value,
         name: inputLocation.value,
