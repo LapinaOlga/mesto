@@ -5,9 +5,6 @@ const profileButton = document.querySelector('.profile__button');
 const profilePopup = document.querySelector('.profile-popup');
 const cardPopup = document.querySelector('.card-popup');
 const imagePopup = document.querySelector('.image-popup');
-const profilePopupIconClose = profilePopup.querySelector('.popup__icon-close');
-const cardPopupIconClose = cardPopup.querySelector('.popup__icon-close');
-const imagePopupIconClose = imagePopup.querySelector('.popup__icon-close');
 const inputUserName = document.querySelector('input.popup__item_el_name');
 const profileTitle = document.querySelector('.profile__title');
 const inputUserProfession = document.querySelector('input.popup__item_el_profession');
@@ -33,8 +30,16 @@ function closePopup(popupClassName) {
 function openPopup(popupClassName) {
     popupClassName.classList.add('popup_opened');
 }
+//Общая функция закрытия попапа по крестику
+const popupIconClose = document.querySelectorAll('.popup__icon-close')
+popupIconClose.forEach(function (item) {
+    item.addEventListener('click', function () {
+        const popup = item.closest('.popup');
+        popup.classList.remove('popup_opened');
+    })
+})
 
-//Попап для редактирования профиля
+//Попап редактирования профиля
 
 profileForm.addEventListener('submit', function (event) {
     event.preventDefault();
@@ -49,26 +54,12 @@ profileEditButton.addEventListener('click', function () {
     inputUserName.value = profileTitle.textContent;
     inputUserProfession.value = profileSubtitle.textContent;
 });
-// Закрываем попап
-profilePopupIconClose.addEventListener('click', function () {
-    closePopup(profilePopup);
-});
 
 
-//Попап для создания карточки
+//Попап создания карточки
 
 profileButton.addEventListener('click', function () {
     openPopup(cardPopup);
-});
-
-cardPopupIconClose.addEventListener('click', function () {
-    closePopup(cardPopup);
-});
-
-//Попап для картинки
-
-imagePopupIconClose.addEventListener('click', function () {
-    closePopup(imagePopup);
 });
 
 
@@ -157,17 +148,3 @@ cardForm.addEventListener('submit', function (event) {
     inputLocation.value = null
 
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
