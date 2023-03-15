@@ -7,7 +7,7 @@ const cardPopup = document.querySelector('.card-popup');
 const imagePopup = document.querySelector('.image-popup');
 const profilePopupIconClose = profilePopup.querySelector('.popup__icon-close');
 const cardPopupIconClose = cardPopup.querySelector('.popup__icon-close');
-const imagePopupIconClose  = imagePopup.querySelector('.popup__icon-close');
+const imagePopupIconClose = imagePopup.querySelector('.popup__icon-close');
 const inputUserName = document.querySelector('input.popup__item_el_name');
 const profileTitle = document.querySelector('.profile__title');
 const inputUserProfession = document.querySelector('input.popup__item_el_profession');
@@ -134,9 +134,9 @@ function addCard(card) {
 
 }
 
-for (let i = 0; i < initialCards.length; i++) {
-    addCard(initialCards[i])
-}
+initialCards.forEach(function (item) {
+    addCard(item)
+})
 
 // Создание новой карточки из попапа
 cardForm.addEventListener('submit', function (event) {
