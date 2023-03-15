@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="d8191f3e-c4fc-4e1f-b424-62f4b7d624a9" name="Default Changelist" comment="Добавлен  gitignore">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/popup/_opened/popup_opened.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/popup/_opened/popup_opened.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/popup/popup.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/popup/popup.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,7 +114,7 @@
       <workItem from="1678392670616" duration="71828000" />
       <workItem from="1678626647960" duration="85000" />
       <workItem from="1678634992243" duration="14875000" />
-      <workItem from="1678817855398" duration="17062000" />
+      <workItem from="1678817855398" duration="18132000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1677066119615</created>
@@ -276,7 +277,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678874211155</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Некоторые константы перенесены из глобальной области видимости в локальную для лучшей читаемости кода">
+      <created>1678875395407</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1678875395407</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -316,6 +324,7 @@
     <MESSAGE value="Исправлены недочеты" />
     <MESSAGE value="добавлено плавное открытие и закрытие попапов" />
     <MESSAGE value="Исправленая функция открытия всех попапов по крестику" />
-    <option name="LAST_COMMIT_MESSAGE" value="Исправленая функция открытия всех попапов по крестику" />
+    <MESSAGE value="Некоторые константы перенесены из глобальной области видимости в локальную для лучшей читаемости кода" />
+    <option name="LAST_COMMIT_MESSAGE" value="Некоторые константы перенесены из глобальной области видимости в локальную для лучшей читаемости кода" />
   </component>
 </project>
