@@ -2,10 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d8191f3e-c4fc-4e1f-b424-62f4b7d624a9" name="Default Changelist" comment="Добавлен  gitignore">
+      <change afterPath="$PROJECT_DIR$/blocks/popup/image-popup/image-popup.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/cards.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/popup/__container/_image/popup__container_image.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/popup/__container-image/popup__container_image.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/element/__image/element__image.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/element/__image/element__image.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,11 +83,11 @@
       <recent name="$PROJECT_DIR$/images" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/blocks/popup" />
       <recent name="$PROJECT_DIR$/blocks/popup/__item" />
       <recent name="$PROJECT_DIR$/scripts" />
       <recent name="$PROJECT_DIR$/blocks" />
       <recent name="$PROJECT_DIR$/blocks/profile" />
-      <recent name="$PROJECT_DIR$/blocks/profile/__info" />
     </key>
   </component>
   <component name="RunManager">
@@ -115,7 +118,7 @@
       <workItem from="1678392670616" duration="71828000" />
       <workItem from="1678626647960" duration="85000" />
       <workItem from="1678634992243" duration="14875000" />
-      <workItem from="1678817855398" duration="18792000" />
+      <workItem from="1678817855398" duration="29034000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1677066119615</created>
@@ -292,7 +295,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678876658608</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Исправлены ошибки после автотестов">
+      <created>1678877141791</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1678877141791</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -324,7 +334,6 @@
     <MESSAGE value="Первый коммит" />
     <MESSAGE value="Добавлен файл .nojekyll" />
     <MESSAGE value="Прописан README.md, добавлены правки" />
-    <MESSAGE value="Исправлены ошибки после автотестов" />
     <MESSAGE value="Исправлены ошибки после первого ревью" />
     <MESSAGE value="Исправлены ошибки после второго ревью" />
     <MESSAGE value="Реализованы карточки и лайки" />
@@ -334,6 +343,7 @@
     <MESSAGE value="Исправленая функция открытия всех попапов по крестику" />
     <MESSAGE value="Некоторые константы перенесены из глобальной области видимости в локальную для лучшей читаемости кода" />
     <MESSAGE value="Исправлены мелкие недочеты" />
-    <option name="LAST_COMMIT_MESSAGE" value="Исправлены мелкие недочеты" />
+    <MESSAGE value="Исправлены ошибки после автотестов" />
+    <option name="LAST_COMMIT_MESSAGE" value="Исправлены ошибки после автотестов" />
   </component>
 </project>
