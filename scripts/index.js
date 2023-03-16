@@ -64,39 +64,38 @@ profileButton.addEventListener('click', function () {
 // Добавление карточек
 function createCard(card) {
     const cardTemplate = document.querySelector('#elements').content;
-    const cardElement = cardTemplate.querySelector('.element');
+    const cardElement = cardTemplate.querySelector('.element').cloneNode(true);
     const cardImage = cardElement.querySelector('.element__image');
     const cardTitle = cardElement.querySelector('.element__title');
     cardImage.src = card.link;
     cardTitle.textContent = card.name;
-    return cardElement.cloneNode(true);
-}
-
-function addCard(newCard) {
-
-    cardElements.prepend(newCard);
 
     // Реализуем лайки
-    const addLike = newCard.querySelector('.element__button')
+    const addLike = cardElement.querySelector('.element__button')
     addLike.addEventListener('click', function (event) {
         event.target.classList.toggle('element__button_active');
     })
 
     //Реализуем удаление карточки при клике на trash
-    const trashButton = newCard.querySelector('.element__trash-button')
+    const trashButton = cardElement.querySelector('.element__trash-button')
     trashButton.addEventListener('click', function () {
         const item = trashButton.closest('.element');
         item.remove();
     })
 
     //Реализуем открытие картинки-попапа
-    const img = newCard.querySelector('.element__image')
+    const img = cardElement.querySelector('.element__image')
     img.addEventListener('click', function () {
         openPopup(imagePopup);
-        popupImage.src = newCard.querySelector('.element__image').src;
-        popupDescription.textContent = newCard.querySelector('.element__title').textContent;
+        popupImage.src = card.link;
+        popupDescription.textContent = card.name;
     })
 
+    return cardElement;
+}
+
+function addCard(newCard) {
+    cardElements.prepend(newCard);
 }
 
 initialCards.forEach(function (item) {
