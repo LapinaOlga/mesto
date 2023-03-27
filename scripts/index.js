@@ -19,13 +19,13 @@ const inputLink = document.querySelector('input.popup__item_el_link');
 
 
 // Общая функция закрытия попапа
-function closePopup(popupClassName) {
-    popupClassName.classList.remove('popup_opened');
+function closePopup(popup) {
+    popup.classList.remove('popup_opened');
 }
 
 // Общая функция открытия попапа
-function openPopup(popupClassName) {
-    popupClassName.classList.add('popup_opened');
+function openPopup(popup) {
+    popup.classList.add('popup_opened');
 }
 
 const allPopups = Array.from(document.querySelectorAll('.popup')); // нашли все попапы на странице
@@ -35,7 +35,14 @@ allPopups.forEach(function (popup) {
         // Если класс кнопки (в вашем случае изображения) есть, то закрываем попап общей функцией закрытия
         if (event.target.classList.contains('popup__icon-close-image')) closePopup(popup)
     })
+    popup.addEventListener('keydown', function (event) {
+        console.log(event.key)
+        if (event.key === "Escape") {
+            closePopup(popup)
+        }
+    })
 })
+
 
 
 //Попап редактирования профиля

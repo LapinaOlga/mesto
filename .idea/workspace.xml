@@ -114,7 +114,15 @@
       <workItem from="1678626647960" duration="85000" />
       <workItem from="1678634992243" duration="14875000" />
       <workItem from="1678817855398" duration="30188000" />
-      <workItem from="1678970083282" duration="656000" />
+      <workItem from="1678970083282" duration="1475000" />
+      <workItem from="1679033030060" duration="55000" />
+      <workItem from="1679151339397" duration="214000" />
+      <workItem from="1679395511028" duration="60000" />
+      <workItem from="1679399691208" duration="554000" />
+      <workItem from="1679401020486" duration="3224000" />
+      <workItem from="1679405526190" duration="1309000" />
+      <workItem from="1679658154647" duration="787000" />
+      <workItem from="1679933928493" duration="2818000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1677066119615</created>
@@ -305,7 +313,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678893372513</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Исправлены ошибки после второго кода-ревью">
+      <created>1678970931659</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1678970931659</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -347,6 +362,7 @@
     <MESSAGE value="Исправлены мелкие недочеты" />
     <MESSAGE value="Исправлены ошибки после автотестов" />
     <MESSAGE value="Исправлены ошибки после первого ревью" />
-    <option name="LAST_COMMIT_MESSAGE" value="Исправлены ошибки после первого ревью" />
+    <MESSAGE value="Исправлены ошибки после второго кода-ревью" />
+    <option name="LAST_COMMIT_MESSAGE" value="Исправлены ошибки после второго кода-ревью" />
   </component>
 </project>
