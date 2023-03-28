@@ -122,7 +122,7 @@
       <workItem from="1679401020486" duration="3224000" />
       <workItem from="1679405526190" duration="1309000" />
       <workItem from="1679658154647" duration="787000" />
-      <workItem from="1679933928493" duration="2818000" />
+      <workItem from="1679933928493" duration="10975000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1677066119615</created>
@@ -320,7 +320,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678970931659</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Тестовый esc">
+      <created>1679936863639</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1679936863639</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -363,6 +370,7 @@
     <MESSAGE value="Исправлены ошибки после автотестов" />
     <MESSAGE value="Исправлены ошибки после первого ревью" />
     <MESSAGE value="Исправлены ошибки после второго кода-ревью" />
-    <option name="LAST_COMMIT_MESSAGE" value="Исправлены ошибки после второго кода-ревью" />
+    <MESSAGE value="Тестовый esc" />
+    <option name="LAST_COMMIT_MESSAGE" value="Тестовый esc" />
   </component>
 </project>

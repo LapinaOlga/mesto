@@ -17,33 +17,37 @@ const popupDescription = document.querySelector('.popup__description')
 const inputLocation = document.querySelector('input.popup__item_el_location');
 const inputLink = document.querySelector('input.popup__item_el_link');
 
+let openedPopup = null
+
 
 // Общая функция закрытия попапа
 function closePopup(popup) {
     popup.classList.remove('popup_opened');
+    openedPopup = null
 }
 
 // Общая функция открытия попапа
 function openPopup(popup) {
     popup.classList.add('popup_opened');
+    openedPopup = popup
 }
-
+//Закрываем попап на крестик
 const allPopups = Array.from(document.querySelectorAll('.popup')); // нашли все попапы на странице
 allPopups.forEach(function (popup) {
     popup.addEventListener('click', function (event) { // на каждый попап устанавливает слушатель события клик
         // далее проверяем наличие класса кнопку закрытия.
         // Если класс кнопки (в вашем случае изображения) есть, то закрываем попап общей функцией закрытия
-        if (event.target.classList.contains('popup__icon-close-image')) closePopup(popup)
-    })
-    popup.addEventListener('keydown', function (event) {
-        console.log(event.key)
-        if (event.key === "Escape") {
-            closePopup(popup)
-        }
+        if (event.target.classList.contains('popup__icon-close-image') || event.target === popup) closePopup(popup)
     })
 })
 
+//Закрываем попап на клавишу Escape
 
+document.addEventListener('keydown', function (event) {
+    if (openedPopup !== null && event.key === 'Escape') {
+        closePopup(openedPopup)
+    }
+})
 
 //Попап редактирования профиля
 
