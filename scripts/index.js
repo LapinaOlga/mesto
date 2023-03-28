@@ -31,6 +31,7 @@ function openPopup(popup) {
     popup.classList.add('popup_opened');
     openedPopup = popup
 }
+
 //Закрываем попап на крестик
 const allPopups = Array.from(document.querySelectorAll('.popup')); // нашли все попапы на странице
 allPopups.forEach(function (popup) {
@@ -81,19 +82,6 @@ function createCard(card) {
     cardImage.src = card.link;
     cardTitle.textContent = card.name;
 
-    // Реализуем лайки
-    const addLike = cardElement.querySelector('.element__button')
-    addLike.addEventListener('click', function (event) {
-        event.target.classList.toggle('element__button_active');
-    })
-
-    //Реализуем удаление карточки при клике на trash
-    const trashButton = cardElement.querySelector('.element__trash-button')
-    trashButton.addEventListener('click', function () {
-        const item = trashButton.closest('.element');
-        item.remove();
-    })
-
     //Реализуем открытие картинки-попапа
     const img = cardElement.querySelector('.element__image')
     img.addEventListener('click', function () {
@@ -104,6 +92,19 @@ function createCard(card) {
 
     return cardElement;
 }
+
+// Реализуем лайки и удаление карточки при клике на trash
+
+cardElements.addEventListener('click', function (event) {
+    if (event.target.classList.contains('element__button')) {
+        event.target.classList.toggle('element__button_active');
+    }
+
+    if (event.target.classList.contains('element__trash-button')) {
+        event.target.closest('.element').remove();
+    }
+
+})
 
 function addCard(newCard) {
     cardElements.prepend(newCard);
