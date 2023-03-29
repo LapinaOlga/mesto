@@ -58,18 +58,20 @@
             <div class="popup__area">
                 <div class="popup__field">
                     <label>
-                        <input type="text" class="popup__item popup__item_el_name" maxlength="40">
+                        <input type="text" class="popup__item popup__item_el_name" minlength="2" maxlength="40"
+                               required>
                     </label>
                     <div class="popup__line"></div>
                 </div>
                 <div class="popup__field">
                     <label>
-                        <input type="text" class="popup__item popup__item_el_profession" maxlength="40">
+                        <input type="text" class="popup__item popup__item_el_profession" minlength="2" maxlength="200"
+                               required>
                     </label>
                     <div class="popup__line"></div>
                 </div>
             </div>
-            <button class="popup__button" type="submit">Сохранить</button>
+            <button class="popup__button popup__button_disabled" type="submit" disabled>Сохранить</button>
         </form>
     </div>
 </div>
@@ -83,20 +85,20 @@
             <div class="popup__area">
                 <div class="popup__field">
                     <label>
-                        <input type="text" class="popup__item popup__item_el_location" maxlength="40"
-                               placeholder="Название">
+                        <input type="text" class="popup__item popup__item_el_location" minlength="1" maxlength="30"
+                               required placeholder="Название">
                     </label>
                     <div class="popup__line"></div>
                 </div>
                 <div class="popup__field">
                     <label>
-                        <input type="text" class="popup__item popup__item_el_link"
+                        <input type="url" class="popup__item popup__item_el_link"
                                placeholder="Ссылка на картинку">
                     </label>
                     <div class="popup__line"></div>
                 </div>
             </div>
-            <button class="popup__button" type="submit">Создать</button>
+            <button class="popup__button popup__button_disabled" type="submit" disabled>Создать</button>
         </form>
     </div>
 </div>

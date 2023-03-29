@@ -32,7 +32,7 @@ function openPopup(popup) {
     openedPopup = popup
 }
 
-//Закрываем попап на крестик
+//Закрываем попап на крестик и оверлэй
 const allPopups = Array.from(document.querySelectorAll('.popup')); // нашли все попапы на странице
 allPopups.forEach(function (popup) {
     popup.addEventListener('click', function (event) { // на каждый попап устанавливает слушатель события клик
@@ -66,12 +66,36 @@ profileEditButton.addEventListener('click', function () {
     inputUserProfession.value = profileSubtitle.textContent;
 });
 
-
 //Попап создания карточки
 
 profileButton.addEventListener('click', function () {
     openPopup(cardPopup);
+
 });
+
+//Делаем кнопку попапов неактивной, пока не прошла валидация
+const popupAddButton = document.querySelector('.popup__button')
+
+function setPopupButtonState(isFormValid) {
+    if (isFormValid) {
+        popupAddButton.removeAttribute('disabled');
+        popupAddButton.classList.remove('popup__button_disabled');
+    } else {
+        popupAddButton.setAttribute('disabled', true);
+        popupAddButton.classList.add('popup__button_disabled');
+    }
+}
+
+
+const form = document.forms.profileForm;
+form.addEventListener('input', function (evt) {
+    const isValid = inputUserName.value.length > 0 && inputUserProfession.value.length > 0
+    if (isValid > 0) {
+        return true
+    }
+    setPopupButtonState(isValid)
+});
+
 
 // Добавление карточек
 function createCard(card) {
@@ -129,3 +153,4 @@ cardForm.addEventListener('submit', function (event) {
     inputLocation.value = null
 
 });
+
