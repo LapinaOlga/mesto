@@ -73,28 +73,79 @@ profileButton.addEventListener('click', function () {
 
 });
 
-//Делаем кнопку попапов неактивной, пока не прошла валидация
-const popupAddButton = document.querySelector('.popup__button')
+// ВАЛИДАЦИЯ //
+// Функция, которая добавляет класс с ошибкой
+const showError = (formSelector, inputElement, errorMessage, inputErrorClass, errorClass) => {
+    const errorElement = inputElement.parentNode.getElementsByClassName(errorClass)[0];
+    inputElement.classList.add(inputErrorClass);
+    if (errorElement) {
+        errorElement.textContent = errorMessage;
+    }
+};
 
-function setPopupButtonState(isFormValid) {
-    if (isFormValid) {
-        popupAddButton.removeAttribute('disabled');
-        popupAddButton.classList.remove('popup__button_disabled');
+// Функция, которая удаляет класс с ошибкой
+const hideError = (formSelector, inputSelector, inputErrorClass, errorClass) => {
+    const errorElement = inputSelector.parentNode.getElementsByClassName(errorClass)[0];
+    inputSelector.classList.remove(inputErrorClass);
+    errorElement.textContent = ' ';
+};
+
+// Функция, которая проверяет валидность поля
+const isValid = (formSelector, inputSelector, inputErrorClass, errorClass) => {
+    if (!inputSelector.validity.valid) {
+        // Если поле не проходит валидацию, покажем ошибку
+        showError(formSelector, inputSelector, inputSelector.validationMessage, inputErrorClass, errorClass);
     } else {
-        popupAddButton.setAttribute('disabled', true);
-        popupAddButton.classList.add('popup__button_disabled');
+        // Если проходит, скроем
+        hideError(formSelector, inputSelector, inputErrorClass, errorClass);
+    }
+};
+
+//Добавляем слушатели форме и ее полям
+function setEventListeners(formSelector, inputErrorClass, errorClass, inputSelector) {
+    const popupItemList = Array.from(formSelector.querySelectorAll(inputSelector))
+    popupItemList.forEach((inputSelector) => {
+        inputSelector.addEventListener('input', function () {
+            isValid(formSelector, inputSelector, inputErrorClass, errorClass);
+        });
+    });
+}
+
+const hasInvalidInput = (inputList) => {
+    // проходим по этому массиву методом some
+    return inputList.some((inputSelector) => {
+        // Если поле не валидно, колбэк вернёт true
+        // Обход массива прекратится и вся функция
+        // hasInvalidInput вернёт true
+
+        return !inputSelector.validity.valid;
+    })
+};
+const toggleButtonState = function (inputList, submitButtonSelector) {
+    if (hasInvalidInput(inputList)) {
+        submitButtonSelector.classList.add(inactiveButtonClass);
+    } else {
+        submitButtonSelector.classList.remove(inactiveButtonClass);
     }
 }
 
 
-const form = document.forms.profileForm;
-form.addEventListener('input', function (evt) {
-    const isValid = inputUserName.value.length > 0 && inputUserProfession.value.length > 0
-    if (isValid > 0) {
-        return true
-    }
-    setPopupButtonState(isValid)
-});
+function enableValidation({
+                              formSelector,
+                              inputSelector,
+                              submitButtonSelector,
+                              inactiveButtonClass,
+                              inputErrorClass,
+                              errorClass,
+                          }) {
+    const popupList = Array.from(document.querySelectorAll(formSelector));
+    popupList.forEach(function (popupElement) {
+        popupElement.addEventListener('submit', function (event) {
+            event.preventDefault();
+        });
+        setEventListeners(popupElement, inputErrorClass, errorClass, inputSelector, formSelector)
+    });
+}
 
 
 // Добавление карточек
