@@ -102,13 +102,37 @@ const isValid = (formSelector, inputSelector, inputErrorClass, errorClass) => {
 };
 
 //Добавляем слушатели форме и ее полям
-function setEventListeners(formSelector, inputErrorClass, errorClass, inputSelector) {
-    const popupItemList = Array.from(formSelector.querySelectorAll(inputSelector))
+function setEventListeners(formSelector, inputErrorClass, errorClass, inputSelector, submitButtonSelector,
+                           inactiveButtonClass, popupElement) {
+    const popupItemList = Array.from(popupElement.querySelectorAll(inputSelector))
+    const buttonElement = popupElement.querySelector(submitButtonSelector)
+    toggleButtonState(popupItemList, buttonElement, inactiveButtonClass);
     popupItemList.forEach(function (inputSelector) {
         inputSelector.addEventListener('input', function () {
             isValid(formSelector, inputSelector, inputErrorClass, errorClass);
+            // Вызовем toggleButtonState, чтобы не ждать ввода данных в поля
+            toggleButtonState(popupItemList, buttonElement, inactiveButtonClass);
         });
     });
+}
+//Проверяем наличие невалидного поля
+const hasInvalidInput = function (popupItemList) {
+    // проходим по этому массиву методом some
+    return popupItemList.some((inputSelector) => {
+        return !inputSelector.validity.valid;
+    })
+};
+// Функция принимает массив полей ввода
+// и элемент кнопки, состояние которой нужно менять
+
+const toggleButtonState = function (popupItemList, buttonElement, inactiveButtonClass) {
+    if (hasInvalidInput(popupItemList)) {
+        buttonElement.classList.add(inactiveButtonClass);
+        // buttonElement.setAttribute('disabled');
+    } else {
+        buttonElement.classList.remove(inactiveButtonClass);
+        // buttonElement.removeAttribute('disabled');
+    }
 }
 
 function enableValidation({
@@ -124,28 +148,11 @@ function enableValidation({
         popupElement.addEventListener('submit', function (event) {
             event.preventDefault();
         });
-        setEventListeners(popupElement, inputErrorClass, errorClass, inputSelector, formSelector)
+        setEventListeners(formSelector, inputErrorClass, errorClass, inputSelector, submitButtonSelector,
+            inactiveButtonClass, popupElement)
     });
 }
 
-const hasInvalidInput = function() {
-    // проходим по этому массиву методом some
-    return inputList.some((inputSelector) => {
-        // Если поле не валидно, колбэк вернёт true
-        // Обход массива прекратится и вся функция
-        // hasInvalidInput вернёт true
-
-        return !inputSelector.validity.valid;
-    })
-};
-
-const toggleButtonState = function (inputList, submitButtonSelector, inactiveButtonClass) {
-    if (hasInvalidInput(inputList)) {
-        submitButtonSelector.classList.add(inactiveButtonClass);
-    } else {
-        submitButtonSelector.classList.remove(inactiveButtonClass);
-    }
-}
 
 // Добавление карточек
 function createCard(card) {

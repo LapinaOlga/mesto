@@ -123,7 +123,7 @@
       <workItem from="1679405526190" duration="1309000" />
       <workItem from="1679658154647" duration="787000" />
       <workItem from="1679933928493" duration="11040000" />
-      <workItem from="1680023135955" duration="64865000" />
+      <workItem from="1680023135955" duration="70774000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1677066119615</created>
@@ -356,7 +356,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680210652846</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="поправила ошибки">
+      <created>1680249754067</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1680249754068</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -375,7 +382,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Тест веток 2" />
     <MESSAGE value="Тест веток 3" />
     <MESSAGE value="Тест веток 4" />
     <MESSAGE value="Тест веток 4 исправлены ошибки после ревью" />
@@ -400,6 +406,7 @@
     <MESSAGE value="Провела рефакторинг лайков и трэша" />
     <MESSAGE value="Добавила модификатор disabled" />
     <MESSAGE value="Сделана валидация полей" />
-    <option name="LAST_COMMIT_MESSAGE" value="Сделана валидация полей" />
+    <MESSAGE value="поправила ошибки" />
+    <option name="LAST_COMMIT_MESSAGE" value="поправила ошибки" />
   </component>
 </project>
