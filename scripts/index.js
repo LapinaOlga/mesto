@@ -104,31 +104,12 @@ const isValid = (formSelector, inputSelector, inputErrorClass, errorClass) => {
 //Добавляем слушатели форме и ее полям
 function setEventListeners(formSelector, inputErrorClass, errorClass, inputSelector) {
     const popupItemList = Array.from(formSelector.querySelectorAll(inputSelector))
-    popupItemList.forEach((inputSelector) => {
+    popupItemList.forEach(function (inputSelector) {
         inputSelector.addEventListener('input', function () {
             isValid(formSelector, inputSelector, inputErrorClass, errorClass);
         });
     });
 }
-
-const hasInvalidInput = (inputList) => {
-    // проходим по этому массиву методом some
-    return inputList.some((inputSelector) => {
-        // Если поле не валидно, колбэк вернёт true
-        // Обход массива прекратится и вся функция
-        // hasInvalidInput вернёт true
-
-        return !inputSelector.validity.valid;
-    })
-};
-const toggleButtonState = function (inputList, submitButtonSelector) {
-    if (hasInvalidInput(inputList)) {
-        submitButtonSelector.classList.add(inactiveButtonClass);
-    } else {
-        submitButtonSelector.classList.remove(inactiveButtonClass);
-    }
-}
-
 
 function enableValidation({
                               formSelector,
@@ -147,6 +128,24 @@ function enableValidation({
     });
 }
 
+const hasInvalidInput = function() {
+    // проходим по этому массиву методом some
+    return inputList.some((inputSelector) => {
+        // Если поле не валидно, колбэк вернёт true
+        // Обход массива прекратится и вся функция
+        // hasInvalidInput вернёт true
+
+        return !inputSelector.validity.valid;
+    })
+};
+
+const toggleButtonState = function (inputList, submitButtonSelector, inactiveButtonClass) {
+    if (hasInvalidInput(inputList)) {
+        submitButtonSelector.classList.add(inactiveButtonClass);
+    } else {
+        submitButtonSelector.classList.remove(inactiveButtonClass);
+    }
+}
 
 // Добавление карточек
 function createCard(card) {
@@ -204,4 +203,6 @@ cardForm.addEventListener('submit', function (event) {
     inputLocation.value = null
 
 });
+
+
 

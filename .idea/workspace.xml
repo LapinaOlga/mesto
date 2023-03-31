@@ -2,16 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d8191f3e-c4fc-4e1f-b424-62f4b7d624a9" name="Default Changelist" comment="Добавлен  gitignore">
-      <change afterPath="$PROJECT_DIR$/blocks/popup/__error/popup__error.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/popup/__form/popup__form.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/popup/__item/_type_error/popup__item_type_error.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/validate.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/popup/__field/popup__field.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/popup/__item/popup__item.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/popup/__item/popup__item.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/popup/__line/popup__line.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -132,7 +123,7 @@
       <workItem from="1679405526190" duration="1309000" />
       <workItem from="1679658154647" duration="787000" />
       <workItem from="1679933928493" duration="11040000" />
-      <workItem from="1680023135955" duration="59940000" />
+      <workItem from="1680023135955" duration="64865000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1677066119615</created>
@@ -358,7 +349,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680083093338</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Сделана валидация полей">
+      <created>1680210652846</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1680210652846</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -377,7 +375,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Тест веток" />
     <MESSAGE value="Тест веток 2" />
     <MESSAGE value="Тест веток 3" />
     <MESSAGE value="Тест веток 4" />
@@ -402,6 +399,7 @@
     <MESSAGE value="Сделала  закрытие на esc и overlay" />
     <MESSAGE value="Провела рефакторинг лайков и трэша" />
     <MESSAGE value="Добавила модификатор disabled" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавила модификатор disabled" />
+    <MESSAGE value="Сделана валидация полей" />
+    <option name="LAST_COMMIT_MESSAGE" value="Сделана валидация полей" />
   </component>
 </project>
