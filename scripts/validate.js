@@ -8,18 +8,10 @@ function enableValidation(settings) {
     });
 }
 
-// Функция, которая сбрасывает поля с ошибкой при повторном открытии попапа
-function resetFormErrors(formElement) {
-    formElement.addEventListener('submit', function (event) {
-        event.preventDefault();
-        formElement.reset();
-    });
-}
-
 //Добавляем слушатели форме и ее полям
 function setEventListeners(settings, formElement) {
-    formElement.addEventListener('submit', function (event) {
-        event.preventDefault();
+    formElement.addEventListener('submit', function () {
+        formElement.reset();
     });
 
     const inputList = Array.from(formElement.querySelectorAll(settings.inputSelector))
@@ -41,14 +33,9 @@ function setEventListeners(settings, formElement) {
     }
 
     popupButtonElement.addEventListener('click', function () {
-        inputList.forEach(function (inputElement) {
-            isValid(settings, inputElement);
-        })
         toggleButtonState(inputList, buttonElement, settings.inactiveButtonClass);
     });
 
-// сбрасываем все поля
-    resetFormErrors(formElement);
 }
 
 
