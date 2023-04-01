@@ -1,6 +1,13 @@
+'use strict';
+
+/**
+ * Включает валидацию для всех форм на странице с указанными настройками
+ * @param {Object} settings
+ */
 function enableValidation(settings) {
     const formList = Array.from(document.querySelectorAll(settings.formSelector));
     formList.forEach(function (formElement) {
+        // Блокируем кнопку,потому что пользователь еще ничего не ввел
         const buttonElement = formElement.querySelector(settings.submitButtonSelector)
         disableButton(buttonElement, settings.inactiveButtonClass)
 
@@ -8,15 +15,18 @@ function enableValidation(settings) {
     });
 }
 
-//Добавляем слушатели форме и ее полям
+/**
+ * Добавляем слушатели форме, попапу и полям формы
+ * @param {Object} settings
+ * @param {HTMLFormElement} formElement
+ */
 function setEventListeners(settings, formElement) {
-    formElement.addEventListener('submit', function () {
-        formElement.reset();
-    });
-
     const inputList = Array.from(formElement.querySelectorAll(settings.inputSelector))
     const buttonElement = formElement.querySelector(settings.submitButtonSelector)
-    // toggleButtonState(inputList, buttonElement, inactiveButtonClass);
+    const popup = formElement.closest('.popup')
+    let popupButtonElement
+
+    // Проверяем валидацию полей формы при вводе
     inputList.forEach(function (inputElement) {
         inputElement.addEventListener('input', function () {
             isValid(settings, inputElement);
@@ -24,22 +34,26 @@ function setEventListeners(settings, formElement) {
         });
     });
 
-    const popup = formElement.closest('.popup')
-    let popupButtonElement
     if (popup.classList.contains('profile-popup')) {
         popupButtonElement = profileEditButton
     } else {
         popupButtonElement = profileButton
     }
 
+    // При открытии попапа проверяем состояние кнопки сохранить/создать и срываем ошибки
     popupButtonElement.addEventListener('click', function () {
         toggleButtonState(inputList, buttonElement, settings.inactiveButtonClass);
+        inputList.forEach(function (inputElement) {
+            hideError(settings, inputElement)
+        });
     });
-
 }
 
-
-// Функция, которая проверяет валидность поля
+/**
+ * Функция, которая проверяет валидность поля
+ * @param {Object} settings
+ * @param {HTMLFormElement} inputElement
+ */
 const isValid = (settings, inputElement) => {
     if (!inputElement.validity.valid) {
         // Если поле не проходит валидацию, покажем ошибку
@@ -50,7 +64,11 @@ const isValid = (settings, inputElement) => {
     }
 };
 
-// Функция, которая добавляет класс с ошибкой
+/**
+ * Показывает ошибку валидации
+ * @param {Object} settings
+ * @param {HTMLFormElement} inputElement
+ */
 const showError = (settings, inputElement) => {
     const errorElement = inputElement.parentNode.getElementsByClassName(settings.errorClass)[0];
     inputElement.classList.add(settings.inputErrorClass);
@@ -59,15 +77,21 @@ const showError = (settings, inputElement) => {
     }
 };
 
-// Функция, которая удаляет класс с ошибкой
+/**
+ * Скрывает ошибку валидации
+ * @param {Object} settings
+ * @param {HTMLFormElement} inputElement
+ */
 const hideError = (settings, inputElement) => {
     const errorElement = inputElement.parentNode.getElementsByClassName(settings.errorClass)[0];
     inputElement.classList.remove(settings.inputErrorClass);
     errorElement.textContent = ' ';
 };
 
-
-//Проверяем наличие невалидного поля
+/**
+ * Проверяет наличие невалидного поля
+ * @param {Array} inputList
+ */
 const hasInvalidInput = function (inputList) {
     // проходим по этому массиву методом some
     return inputList.some((inputElement) => {
@@ -75,8 +99,12 @@ const hasInvalidInput = function (inputList) {
     })
 };
 
-// Функция принимает массив полей ввода
-// и элемент кнопки, состояние которой нужно менять
+/**
+ * Блокирует или разблокирует кнопку сохранить/создать в зависимости от наличия ошибок в форме
+ * @param {Array} popupItemList
+ * @param {Element} buttonElement
+ * @param {String} inactiveButtonClass
+ */
 const toggleButtonState = function (popupItemList, buttonElement, inactiveButtonClass) {
     if (hasInvalidInput(popupItemList)) {
         disableButton(buttonElement, inactiveButtonClass)
@@ -86,11 +114,15 @@ const toggleButtonState = function (popupItemList, buttonElement, inactiveButton
     }
 }
 
+/**
+ * Блокирует кнопку сохранить/создать
+ * @param {Element} buttonElement
+ * @param {String} inactiveButtonClass
+ */
 function disableButton(buttonElement, inactiveButtonClass) {
     buttonElement.classList.add(inactiveButtonClass);
-    buttonElement.setAttribute('disabled', true);
+    buttonElement.setAttribute('disabled', 'disabled');
 }
-
 
 enableValidation({
     formSelector: '.popup__form',

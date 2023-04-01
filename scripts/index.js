@@ -20,69 +20,29 @@ const allPopups = Array.from(document.querySelectorAll('.popup')); // нашли
 
 let openedPopup = null
 
-
-// Общая функция закрытия попапа
+/**
+ * Общая функция закрытия попапа
+ * @param {Element} popup
+ */
 function closePopup(popup) {
     popup.classList.remove('popup_opened');
     openedPopup = null
 }
 
-// Общая функция открытия попапа
+/**
+ * Общая функция отрытия попапа
+ * @param {Element} popup
+ */
 function openPopup(popup) {
     popup.classList.add('popup_opened');
     openedPopup = popup
 }
 
-//Закрываем попап на крестик и на overlay
-allPopups.forEach(function (popup) {
-    popup.addEventListener('click', function (event) { // на каждый попап устанавливает слушатель события клик
-        // далее проверяем наличие класса кнопку закрытия.
-        //Закрываем попап на крестик
-        if (event.target.classList.contains('popup__icon-close-image')) {
-            closePopup(popup)
-        }
-        //Закрываем попап на overlay
-        if (event.target === event.currentTarget) {
-            closePopup(popup)
-        }
-    })
-})
-
-
-//Закрываем попап на клавишу Escape
-
-document.addEventListener('keydown', function (event) {
-    if (openedPopup !== null && event.key === 'Escape') {
-        closePopup(openedPopup)
-    }
-})
-
-//Попап редактирования профиля
-
-profileForm.addEventListener('submit', function (event) {
-    event.preventDefault();
-    profileTitle.textContent = inputUserName.value;
-    profileSubtitle.textContent = inputUserProfession.value;
-    closePopup(profilePopup);
-});
-
-// Открываем попап и добавляем текст из профиля в попап
-profileEditButton.addEventListener('click', function () {
-    inputUserName.value = profileTitle.textContent;
-    inputUserProfession.value = profileSubtitle.textContent;
-
-    openPopup(profilePopup);
-
-});
-
-//Попап создания карточки
-
-profileButton.addEventListener('click', function () {
-    openPopup(cardPopup);
-
-});
-
-// Добавление карточек
+/**
+ * Создает элемент карточки
+ * @param {Object} card
+ * @returns {Node}
+ */
 function createCard(card) {
     const cardTemplate = document.querySelector('#elements').content;
     const cardElement = cardTemplate.querySelector('.element').cloneNode(true);
@@ -101,8 +61,59 @@ function createCard(card) {
     return cardElement;
 }
 
-// Реализуем лайки и удаление карточки при клике на trash
+/**
+ * Добавляет карточку на страницу
+ * @param {Node} newCard
+ */
+function addCard(newCard) {
+    cardElements.prepend(newCard);
+}
 
+// Закрываем попап на крестик и на overlay
+allPopups.forEach(function (popup) {
+    // на каждый попап устанавливает слушатель события клик
+    popup.addEventListener('click', function (event) {
+        // далее проверяем наличие класса кнопку закрытия.
+        // Закрываем попап на крестик
+        if (event.target.classList.contains('popup__icon-close-image')) {
+            closePopup(popup)
+        }
+        // Закрываем попап на overlay
+        if (event.target === event.currentTarget) {
+            closePopup(popup)
+        }
+    })
+})
+
+
+// Закрываем попап на клавишу Escape
+document.addEventListener('keydown', function (event) {
+    if (openedPopup !== null && event.key === 'Escape') {
+        closePopup(openedPopup)
+    }
+})
+
+// Попап редактирования профиля
+profileForm.addEventListener('submit', function (event) {
+    event.preventDefault();
+    profileTitle.textContent = inputUserName.value;
+    profileSubtitle.textContent = inputUserProfession.value;
+    closePopup(profilePopup);
+});
+
+// Открываем попап и добавляем текст из профиля в попап
+profileEditButton.addEventListener('click', function () {
+    inputUserName.value = profileTitle.textContent;
+    inputUserProfession.value = profileSubtitle.textContent;
+    openPopup(profilePopup);
+});
+
+//Попап создания карточки
+profileButton.addEventListener('click', function () {
+    openPopup(cardPopup);
+});
+
+// Реализуем лайки и удаление карточки при клике на trash
 cardElements.addEventListener('click', function (event) {
     if (event.target.classList.contains('element__button')) {
         event.target.classList.toggle('element__button_active');
@@ -111,17 +122,11 @@ cardElements.addEventListener('click', function (event) {
     if (event.target.classList.contains('element__trash-button')) {
         event.target.closest('.element').remove();
     }
-
 })
-
-function addCard(newCard) {
-    cardElements.prepend(newCard);
-}
 
 initialCards.forEach(function (item) {
     addCard(createCard(item))
 })
-
 
 // Создание новой карточки из попапа
 cardForm.addEventListener('submit', function (event) {
@@ -135,7 +140,6 @@ cardForm.addEventListener('submit', function (event) {
     closePopup(cardPopup);
     inputLink.value = null
     inputLocation.value = null
-
 });
 
 

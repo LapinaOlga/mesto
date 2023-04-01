@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d8191f3e-c4fc-4e1f-b424-62f4b7d624a9" name="Default Changelist" comment="Добавлен  gitignore">
-      <change afterPath="$PROJECT_DIR$/blocks/popup/__label/popup__label.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/popup/__area/popup__area.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/popup/__area/popup__area.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/popup/__error/popup__error.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/popup/__error/popup__error.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/validate.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/validate.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -128,7 +124,7 @@
       <workItem from="1679405526190" duration="1309000" />
       <workItem from="1679658154647" duration="787000" />
       <workItem from="1679933928493" duration="11040000" />
-      <workItem from="1680023135955" duration="107128000" />
+      <workItem from="1680023135955" duration="115237000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1677066119615</created>
@@ -382,7 +378,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680347726164</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="Исправила некоторые ошибки в работе функций">
+      <created>1680357348986</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1680357348986</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -401,7 +404,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Тест веток 4 исправлены ошибки после ревью" />
     <MESSAGE value="свыма" />
     <MESSAGE value="длысрирчс" />
     <MESSAGE value="Первый коммит" />
@@ -426,18 +428,7 @@
     <MESSAGE value="поправила ошибки" />
     <MESSAGE value="добавила кнопку disabled" />
     <MESSAGE value="Переделала закрытие попапа на overlay" />
-    <option name="LAST_COMMIT_MESSAGE" value="Переделала закрытие попапа на overlay" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/scripts/validate.js</url>
-          <line>11</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Исправила некоторые ошибки в работе функций" />
+    <option name="LAST_COMMIT_MESSAGE" value="Исправила некоторые ошибки в работе функций" />
   </component>
 </project>
