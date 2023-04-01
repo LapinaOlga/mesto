@@ -16,6 +16,7 @@ const popupImage = document.querySelector('.popup__image')
 const popupDescription = document.querySelector('.popup__description')
 const inputLocation = document.querySelector('input.popup__item_el_location');
 const inputLink = document.querySelector('input.popup__item_el_link');
+const allPopups = Array.from(document.querySelectorAll('.popup')); // нашли все попапы на странице
 
 let openedPopup = null
 
@@ -32,15 +33,21 @@ function openPopup(popup) {
     openedPopup = popup
 }
 
-//Закрываем попап на крестик и оверлэй
-const allPopups = Array.from(document.querySelectorAll('.popup')); // нашли все попапы на странице
+//Закрываем попап на крестик и на overlay
 allPopups.forEach(function (popup) {
     popup.addEventListener('click', function (event) { // на каждый попап устанавливает слушатель события клик
         // далее проверяем наличие класса кнопку закрытия.
-        // Если класс кнопки (в вашем случае изображения) есть, то закрываем попап общей функцией закрытия
-        if (event.target.classList.contains('popup__icon-close-image') || event.target === popup) closePopup(popup)
+        //Закрываем попап на крестик
+        if (event.target.classList.contains('popup__icon-close-image')) {
+            closePopup(popup)
+        }
+        //Закрываем попап на overlay
+        if (event.target === event.currentTarget) {
+            closePopup(popup)
+        }
     })
 })
+
 
 //Закрываем попап на клавишу Escape
 
@@ -61,9 +68,11 @@ profileForm.addEventListener('submit', function (event) {
 
 // Открываем попап и добавляем текст из профиля в попап
 profileEditButton.addEventListener('click', function () {
-    openPopup(profilePopup);
     inputUserName.value = profileTitle.textContent;
     inputUserProfession.value = profileSubtitle.textContent;
+
+    openPopup(profilePopup);
+
 });
 
 //Попап создания карточки
@@ -72,87 +81,6 @@ profileButton.addEventListener('click', function () {
     openPopup(cardPopup);
 
 });
-
-// ВАЛИДАЦИЯ //
-// Функция, которая добавляет класс с ошибкой
-const showError = (formSelector, inputElement, errorMessage, inputErrorClass, errorClass) => {
-    const errorElement = inputElement.parentNode.getElementsByClassName(errorClass)[0];
-    inputElement.classList.add(inputErrorClass);
-    if (errorElement) {
-        errorElement.textContent = errorMessage;
-    }
-};
-
-// Функция, которая удаляет класс с ошибкой
-const hideError = (formSelector, inputSelector, inputErrorClass, errorClass) => {
-    const errorElement = inputSelector.parentNode.getElementsByClassName(errorClass)[0];
-    inputSelector.classList.remove(inputErrorClass);
-    errorElement.textContent = ' ';
-};
-
-// Функция, которая проверяет валидность поля
-const isValid = (formSelector, inputSelector, inputErrorClass, errorClass) => {
-    if (!inputSelector.validity.valid) {
-        // Если поле не проходит валидацию, покажем ошибку
-        showError(formSelector, inputSelector, inputSelector.validationMessage, inputErrorClass, errorClass);
-    } else {
-        // Если проходит, скроем
-        hideError(formSelector, inputSelector, inputErrorClass, errorClass);
-    }
-};
-
-//Добавляем слушатели форме и ее полям
-function setEventListeners(formSelector, inputErrorClass, errorClass, inputSelector, submitButtonSelector,
-                           inactiveButtonClass, popupElement) {
-    const popupItemList = Array.from(popupElement.querySelectorAll(inputSelector))
-    const buttonElement = popupElement.querySelector(submitButtonSelector)
-    toggleButtonState(popupItemList, buttonElement, inactiveButtonClass);
-    popupItemList.forEach(function (inputSelector) {
-        inputSelector.addEventListener('input', function () {
-            isValid(formSelector, inputSelector, inputErrorClass, errorClass);
-            // Вызовем toggleButtonState, чтобы не ждать ввода данных в поля
-            toggleButtonState(popupItemList, buttonElement, inactiveButtonClass);
-        });
-    });
-}
-//Проверяем наличие невалидного поля
-const hasInvalidInput = function (popupItemList) {
-    // проходим по этому массиву методом some
-    return popupItemList.some((inputSelector) => {
-        return !inputSelector.validity.valid;
-    })
-};
-// Функция принимает массив полей ввода
-// и элемент кнопки, состояние которой нужно менять
-
-const toggleButtonState = function (popupItemList, buttonElement, inactiveButtonClass) {
-    if (hasInvalidInput(popupItemList)) {
-        buttonElement.classList.add(inactiveButtonClass);
-        // buttonElement.setAttribute('disabled');
-    } else {
-        buttonElement.classList.remove(inactiveButtonClass);
-        // buttonElement.removeAttribute('disabled');
-    }
-}
-
-function enableValidation({
-                              formSelector,
-                              inputSelector,
-                              submitButtonSelector,
-                              inactiveButtonClass,
-                              inputErrorClass,
-                              errorClass,
-                          }) {
-    const popupList = Array.from(document.querySelectorAll(formSelector));
-    popupList.forEach(function (popupElement) {
-        popupElement.addEventListener('submit', function (event) {
-            event.preventDefault();
-        });
-        setEventListeners(formSelector, inputErrorClass, errorClass, inputSelector, submitButtonSelector,
-            inactiveButtonClass, popupElement)
-    });
-}
-
 
 // Добавление карточек
 function createCard(card) {
@@ -170,7 +98,6 @@ function createCard(card) {
         popupImage.src = card.link;
         popupDescription.textContent = card.name;
     })
-
     return cardElement;
 }
 

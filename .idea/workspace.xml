@@ -3,7 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="d8191f3e-c4fc-4e1f-b424-62f4b7d624a9" name="Default Changelist" comment="Добавлен  gitignore">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/popup/__button/_disabled/popup__button_disabled.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/popup/__button/_disabled/popup__button_disabled.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/validate.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/validate.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,7 +126,7 @@
       <workItem from="1679405526190" duration="1309000" />
       <workItem from="1679658154647" duration="787000" />
       <workItem from="1679933928493" duration="11040000" />
-      <workItem from="1680023135955" duration="70774000" />
+      <workItem from="1680023135955" duration="101546000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1677066119615</created>
@@ -363,7 +366,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680249754068</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="добавила кнопку disabled">
+      <created>1680255900949</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1680255900949</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -382,7 +392,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Тест веток 3" />
     <MESSAGE value="Тест веток 4" />
     <MESSAGE value="Тест веток 4 исправлены ошибки после ревью" />
     <MESSAGE value="свыма" />
@@ -407,6 +416,7 @@
     <MESSAGE value="Добавила модификатор disabled" />
     <MESSAGE value="Сделана валидация полей" />
     <MESSAGE value="поправила ошибки" />
-    <option name="LAST_COMMIT_MESSAGE" value="поправила ошибки" />
+    <MESSAGE value="добавила кнопку disabled" />
+    <option name="LAST_COMMIT_MESSAGE" value="добавила кнопку disabled" />
   </component>
 </project>
