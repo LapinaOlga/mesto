@@ -23,8 +23,6 @@ function enableValidation(settings) {
 function setEventListeners(settings, formElement) {
     const inputList = Array.from(formElement.querySelectorAll(settings.inputSelector))
     const buttonElement = formElement.querySelector(settings.submitButtonSelector)
-    const popup = formElement.closest('.popup')
-    let popupButtonElement
 
     // Проверяем валидацию полей формы при вводе
     inputList.forEach(function (inputElement) {
@@ -34,19 +32,15 @@ function setEventListeners(settings, formElement) {
         });
     });
 
-    if (popup.classList.contains('profile-popup')) {
-        popupButtonElement = profileEditButton
-    } else {
-        popupButtonElement = profileButton
-    }
-
-    // При открытии попапа проверяем состояние кнопки сохранить/создать и срываем ошибки
-    popupButtonElement.addEventListener('click', function () {
-        toggleButtonState(inputList, buttonElement, settings.inactiveButtonClass);
+    // При сбросе формы, сбрасываем значение инпутов, так как форма их еще не сбросила
+    // и блокируем кнопку создать/сохранить
+    formElement.addEventListener('reset', function () {
         inputList.forEach(function (inputElement) {
             hideError(settings, inputElement)
+            inputElement.value = null
         });
-    });
+        toggleButtonState(inputList, buttonElement, settings.inactiveButtonClass);
+    })
 }
 
 /**

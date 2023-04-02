@@ -27,6 +27,8 @@ let openedPopup = null
 function closePopup(popup) {
     popup.classList.remove('popup_opened');
     openedPopup = null
+    document.removeEventListener('keydown', closePopupByEsc)
+    popup.querySelector('.popup__form').reset()
 }
 
 /**
@@ -36,6 +38,7 @@ function closePopup(popup) {
 function openPopup(popup) {
     popup.classList.add('popup_opened');
     openedPopup = popup
+    document.addEventListener('keydown', closePopupByEsc)
 }
 
 /**
@@ -49,6 +52,7 @@ function createCard(card) {
     const cardImage = cardElement.querySelector('.element__image');
     const cardTitle = cardElement.querySelector('.element__title');
     cardImage.src = card.link;
+    cardImage.setAttribute('alt', card.name)
     cardTitle.textContent = card.name;
 
     //Реализуем открытие картинки-попапа
@@ -56,8 +60,21 @@ function createCard(card) {
     img.addEventListener('click', function () {
         openPopup(imagePopup);
         popupImage.src = card.link;
+        popupImage.setAttribute('alt', card.name)
         popupDescription.textContent = card.name;
     })
+
+    // Реализуем лайки и удаление карточки при клике на trash
+    cardElement.addEventListener('click', function (event) {
+        if (event.target.classList.contains('element__button')) {
+            event.target.classList.toggle('element__button_active');
+        }
+
+        if (event.target.classList.contains('element__trash-button')) {
+            event.target.closest('.element').remove();
+        }
+    })
+
     return cardElement;
 }
 
@@ -85,13 +102,15 @@ allPopups.forEach(function (popup) {
     })
 })
 
-
-// Закрываем попап на клавишу Escape
-document.addEventListener('keydown', function (event) {
-    if (openedPopup !== null && event.key === 'Escape') {
+/**
+ * Закрытие попапа на Escape
+ * @param {KeyboardEvent} event
+ */
+const closePopupByEsc = function (event) {
+    if (event.key === 'Escape') {
         closePopup(openedPopup)
     }
-})
+}
 
 // Попап редактирования профиля
 profileForm.addEventListener('submit', function (event) {
@@ -106,23 +125,15 @@ profileEditButton.addEventListener('click', function () {
     inputUserName.value = profileTitle.textContent;
     inputUserProfession.value = profileSubtitle.textContent;
     openPopup(profilePopup);
+
+    const inputEvent = new Event('input')
+    inputUserName.dispatchEvent(inputEvent)
 });
 
 //Попап создания карточки
 profileButton.addEventListener('click', function () {
     openPopup(cardPopup);
 });
-
-// Реализуем лайки и удаление карточки при клике на trash
-cardElements.addEventListener('click', function (event) {
-    if (event.target.classList.contains('element__button')) {
-        event.target.classList.toggle('element__button_active');
-    }
-
-    if (event.target.classList.contains('element__trash-button')) {
-        event.target.closest('.element').remove();
-    }
-})
 
 initialCards.forEach(function (item) {
     addCard(createCard(item))
@@ -138,8 +149,6 @@ cardForm.addEventListener('submit', function (event) {
         })
     );
     closePopup(cardPopup);
-    inputLink.value = null
-    inputLocation.value = null
 });
 
 

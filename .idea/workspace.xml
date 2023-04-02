@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d8191f3e-c4fc-4e1f-b424-62f4b7d624a9" name="Default Changelist" comment="Добавлен  gitignore">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/main/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/main/main.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/validate.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/validate.js" afterDir="false" />
     </list>
@@ -124,7 +125,8 @@
       <workItem from="1679405526190" duration="1309000" />
       <workItem from="1679658154647" duration="787000" />
       <workItem from="1679933928493" duration="11040000" />
-      <workItem from="1680023135955" duration="115237000" />
+      <workItem from="1680023135955" duration="116171000" />
+      <workItem from="1680380385845" duration="8692000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1677066119615</created>
@@ -385,7 +387,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680357348986</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="Реализовала весь интерфейс">
+      <created>1680374047096</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1680374047096</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -404,7 +413,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="свыма" />
     <MESSAGE value="длысрирчс" />
     <MESSAGE value="Первый коммит" />
     <MESSAGE value="Добавлен файл .nojekyll" />
@@ -429,6 +437,7 @@
     <MESSAGE value="добавила кнопку disabled" />
     <MESSAGE value="Переделала закрытие попапа на overlay" />
     <MESSAGE value="Исправила некоторые ошибки в работе функций" />
-    <option name="LAST_COMMIT_MESSAGE" value="Исправила некоторые ошибки в работе функций" />
+    <MESSAGE value="Реализовала весь интерфейс" />
+    <option name="LAST_COMMIT_MESSAGE" value="Реализовала весь интерфейс" />
   </component>
 </project>
