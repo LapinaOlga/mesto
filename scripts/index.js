@@ -28,7 +28,12 @@ function closePopup(popup) {
     popup.classList.remove('popup_opened');
     openedPopup = null
     document.removeEventListener('keydown', closePopupByEsc)
-    popup.querySelector('.popup__form').reset()
+
+    //Если у попапа есть форма, то сбрасываем ее в независимости от того, была ли она отправлена
+    const popupForm = popup.querySelector('.popup__form')
+    if (popupForm){
+        popupForm.reset()
+    }
 }
 
 /**
