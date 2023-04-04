@@ -16,7 +16,6 @@ const popupImage = document.querySelector('.popup__image')
 const popupDescription = document.querySelector('.popup__description')
 const inputLocation = document.querySelector('input.popup__item_el_location');
 const inputLink = document.querySelector('input.popup__item_el_link');
-const allPopups = Array.from(document.querySelectorAll('.popup')); // нашли все попапы на странице
 
 let openedPopup = null
 
@@ -28,12 +27,6 @@ function closePopup(popup) {
     popup.classList.remove('popup_opened');
     openedPopup = null
     document.removeEventListener('keydown', closePopupByEsc)
-
-    //Если у попапа есть форма, то сбрасываем ее в независимости от того, была ли она отправлена
-    const popupForm = popup.querySelector('.popup__form')
-    if (popupForm){
-        popupForm.reset()
-    }
 }
 
 /**
@@ -44,6 +37,17 @@ function openPopup(popup) {
     popup.classList.add('popup_opened');
     openedPopup = popup
     document.addEventListener('keydown', closePopupByEsc)
+}
+
+/**
+ * Общая функция очистки попапа формы
+ * @param {Element} popup
+ */
+const resetPopupForm = function (popup) {
+    const popupForm = popup.querySelector('.popup__form')
+    if (popupForm) {
+        popupForm.reset()
+    }
 }
 
 /**
@@ -91,21 +95,14 @@ function addCard(newCard) {
     cardElements.prepend(newCard);
 }
 
-// Закрываем попап на крестик и на overlay
-allPopups.forEach(function (popup) {
-    // на каждый попап устанавливает слушатель события клик
-    popup.addEventListener('click', function (event) {
-        // далее проверяем наличие класса кнопку закрытия.
-        // Закрываем попап на крестик
-        if (event.target.classList.contains('popup__icon-close-image')) {
-            closePopup(popup)
-        }
-        // Закрываем попап на overlay
-        if (event.target === event.currentTarget) {
-            closePopup(popup)
-        }
-    })
-})
+/**
+ * Общая функция закрытия попапов на крестик и на overlay
+ * @param {Event} event
+ */
+function isClosingPopup(event) {
+    return event.target.classList.contains('popup__icon-close-image')
+        || event.target === event.currentTarget
+}
 
 /**
  * Закрытие попапа на Escape
@@ -123,6 +120,7 @@ profileForm.addEventListener('submit', function (event) {
     profileTitle.textContent = inputUserName.value;
     profileSubtitle.textContent = inputUserProfession.value;
     closePopup(profilePopup);
+    resetPopupForm(profilePopup);
 });
 
 // Открываем попап и добавляем текст из профиля в попап
@@ -154,7 +152,31 @@ cardForm.addEventListener('submit', function (event) {
         })
     );
     closePopup(cardPopup);
+    resetPopupForm(cardPopup);
 });
+
+// на попап для профиля устанавливаем слушатель события клик
+profilePopup.addEventListener('click', function (event) {
+    if (isClosingPopup(event)) {
+        closePopup(profilePopup)
+        resetPopupForm(profilePopup);
+    }
+})
+
+// на попап для карточки устанавливаем слушатель события клик
+cardPopup.addEventListener('click', function (event) {
+    if (isClosingPopup(event)) {
+        closePopup(cardPopup)
+        resetPopupForm(cardPopup);
+    }
+})
+
+// на попап картинки устанавливаем слушатель события клик
+imagePopup.addEventListener('click', function (event) {
+    if (isClosingPopup(event)) {
+        closePopup(imagePopup)
+    }
+})
 
 
 

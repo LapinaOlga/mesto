@@ -125,7 +125,9 @@
       <workItem from="1679933928493" duration="11040000" />
       <workItem from="1680023135955" duration="116171000" />
       <workItem from="1680380385845" duration="9567000" />
-      <workItem from="1680507354270" duration="1767000" />
+      <workItem from="1680507354270" duration="3017000" />
+      <workItem from="1680551246844" duration="7934000" />
+      <workItem from="1680631360455" duration="571000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1677066119615</created>
@@ -400,7 +402,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680431557548</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="Исправлены ошибки после второго кода-ревью">
+      <created>1680509208146</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1680509208146</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -432,7 +441,6 @@
     <MESSAGE value="Исправлены мелкие недочеты" />
     <MESSAGE value="Исправлены ошибки после автотестов" />
     <MESSAGE value="Исправлены ошибки после первого ревью" />
-    <MESSAGE value="Исправлены ошибки после второго кода-ревью" />
     <MESSAGE value="Тестовый esc" />
     <MESSAGE value="Сделала  закрытие на esc и overlay" />
     <MESSAGE value="Провела рефакторинг лайков и трэша" />
@@ -444,6 +452,7 @@
     <MESSAGE value="Исправила некоторые ошибки в работе функций" />
     <MESSAGE value="Реализовала весь интерфейс" />
     <MESSAGE value="Исправлены ошибки после первого кода-ревью" />
-    <option name="LAST_COMMIT_MESSAGE" value="Исправлены ошибки после первого кода-ревью" />
+    <MESSAGE value="Исправлены ошибки после второго кода-ревью" />
+    <option name="LAST_COMMIT_MESSAGE" value="Исправлены ошибки после второго кода-ревью" />
   </component>
 </project>
