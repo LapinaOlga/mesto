@@ -1,5 +1,9 @@
 'use strict';
 
+import initialCards from "./cards.js";
+import Card from "./Card.js";
+import FormValidator from "./FormValidator.js";
+
 const profileEditButton = document.querySelector('.profile__edit-button');
 const profileButton = document.querySelector('.profile__button');
 const profilePopup = document.querySelector('.profile-popup');
@@ -18,6 +22,17 @@ const inputLocation = document.querySelector('input.popup__item_el_location');
 const inputLink = document.querySelector('input.popup__item_el_link');
 
 let openedPopup = null
+
+const selectorTemplate = '#elements';
+
+const validatorSettings = {
+    formSelector: '.popup__form',
+    inputSelector: '.popup__item',
+    submitButtonSelector: '.popup__button',
+    inactiveButtonClass: 'popup__button_disabled',
+    inputErrorClass: 'popup__item_type_error',
+    errorClass: 'popup__error'
+}
 
 /**
  * Общая функция закрытия попапа
@@ -52,39 +67,17 @@ const resetPopupForm = function (popup) {
 
 /**
  * Создает элемент карточки
- * @param {Object} card
+ * @param {Object} data
  * @returns {Node}
  */
-function createCard(card) {
-    const cardTemplate = document.querySelector('#elements').content;
-    const cardElement = cardTemplate.querySelector('.element').cloneNode(true);
-    const cardImage = cardElement.querySelector('.element__image');
-    const cardTitle = cardElement.querySelector('.element__title');
-    cardImage.src = card.link;
-    cardImage.setAttribute('alt', card.name)
-    cardTitle.textContent = card.name;
-
-    //Реализуем открытие картинки-попапа
-    const img = cardElement.querySelector('.element__image')
-    img.addEventListener('click', function () {
+function createCard(data) {
+    const card = new Card(data.name, data.link, selectorTemplate)
+    return card.make(function (card) {
         openPopup(imagePopup);
         popupImage.src = card.link;
         popupImage.setAttribute('alt', card.name)
         popupDescription.textContent = card.name;
     })
-
-    // Реализуем лайки и удаление карточки при клике на trash
-    cardElement.addEventListener('click', function (event) {
-        if (event.target.classList.contains('element__button')) {
-            event.target.classList.toggle('element__button_active');
-        }
-
-        if (event.target.classList.contains('element__trash-button')) {
-            event.target.closest('.element').remove();
-        }
-    })
-
-    return cardElement;
 }
 
 /**
@@ -178,5 +171,10 @@ imagePopup.addEventListener('click', function (event) {
     }
 })
 
+const profileFormValidator = new FormValidator(validatorSettings, profileForm)
+profileFormValidator.enableValidation()
+
+const cardFormValidator = new FormValidator(validatorSettings, cardForm)
+cardFormValidator.enableValidation()
 
 
