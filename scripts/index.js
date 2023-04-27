@@ -71,13 +71,13 @@ const resetPopupForm = function (popup) {
  * @returns {Node}
  */
 function createCard(data) {
-    const card = new Card(data.name, data.link, selectorTemplate)
-    return card.make(function (card) {
+    const card = new Card(data.name, data.link, selectorTemplate, function (card) {
         openPopup(imagePopup);
         popupImage.src = card.link;
         popupImage.setAttribute('alt', card.name)
         popupDescription.textContent = card.name;
     })
+    return card.make()
 }
 
 /**

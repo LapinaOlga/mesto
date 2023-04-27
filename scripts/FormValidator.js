@@ -1,4 +1,7 @@
 class FormValidator {
+    _buttonElement = null
+    _inputList = null
+
     constructor(settings, formElement) {
         this._settings = settings;
         this._formElement = formElement;
@@ -6,35 +9,33 @@ class FormValidator {
 
     enableValidation() {
         // Блокируем кнопку,потому что пользователь еще ничего не ввел
-        const buttonElement = this._formElement.querySelector(this._settings.submitButtonSelector)
-        this._disableButton(buttonElement);
-        this._setEventListeners(buttonElement);
+        this._disableButton();
+        this._setEventListeners();
     }
 
-    _disableButton(buttonElement) {
-        buttonElement.classList.add(this._settings.inactiveButtonClass);
-        buttonElement.setAttribute('disabled', 'disabled');
+    _disableButton() {
+        this._getButtonElement().classList.add(this._settings.inactiveButtonClass);
+        this._getButtonElement().setAttribute('disabled', 'disabled');
     }
 
-    _setEventListeners(buttonElement) {
-        const inputList = Array.from(this._formElement.querySelectorAll(this._settings.inputSelector))
+    _setEventListeners() {
 
         // Проверяем валидацию полей формы при вводе
-        inputList.forEach((inputElement) => {
+        this._getInputList().forEach((inputElement) => {
             inputElement.addEventListener('input', () => {
                 this._isValid(inputElement)
-                this._toggleButtonState(inputList, buttonElement);
+                this._toggleButtonState();
             });
         });
 
         // При сбросе формы, сбрасываем значение инпутов, так как форма их еще не сбросила
         // и блокируем кнопку создать/сохранить
         this._formElement.addEventListener('reset', () => {
-            inputList.forEach((inputElement) => {
+            this._getInputList().forEach((inputElement) => {
                 this._hideError(inputElement)
                 inputElement.value = null
             });
-            this._toggleButtonState(inputList, buttonElement);
+            this._toggleButtonState();
         })
     }
 
@@ -62,24 +63,38 @@ class FormValidator {
         errorElement.textContent = ' ';
     }
 
-    _toggleButtonState(popupItemList, buttonElement) {
-        if (this._hasInvalidInput(popupItemList)) {
-            this._disableButton(buttonElement)
+    _toggleButtonState() {
+        if (this._hasInvalidInput()) {
+            this._disableButton()
         } else {
-            buttonElement.classList.remove(this._settings.inactiveButtonClass);
-            buttonElement.removeAttribute('disabled');
+            this._getButtonElement().classList.remove(this._settings.inactiveButtonClass);
+            this._getButtonElement().removeAttribute('disabled');
         }
     }
 
-    _hasInvalidInput(inputList) {
+    _hasInvalidInput() {
         // проходим по этому массиву методом some
-        return inputList.some((inputElement) => {
+        return this._getInputList().some((inputElement) => {
             return !inputElement.validity.valid;
         })
-    };
+    }
 
+    _getButtonElement() {
+        if (this._buttonElement === null) {
+            this._buttonElement = this._formElement.querySelector(this._settings.submitButtonSelector)
+        }
+
+        return this._buttonElement
+    }
+
+    _getInputList() {
+        if (this._inputList === null) {
+            this._inputList = Array.from(this._formElement.querySelectorAll(this._settings.inputSelector))
+        }
+
+        return this._inputList
+    }
 }
-
 
 
 export default FormValidator;

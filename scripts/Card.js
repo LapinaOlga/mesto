@@ -1,17 +1,22 @@
 class Card {
-    constructor(name, link, selectorTemplate) {
+    constructor(name, link, selectorTemplate, onClickByImage) {
         this.name = name;
         this.link = link;
         this._selectorTemplate = selectorTemplate;
+        this._onClickByImage = onClickByImage;
     }
 
-    make(onClickByImage) {
+    make() {
         const result = this._getElement()
-        this._addEventListenerForImagePopup(result, onClickByImage)
-        this._addEventListenerForLike(result)
-        this._addEventListenerForTrashButton(result)
+        this._setEventListeners(result)
 
         return result;
+    }
+
+    _setEventListeners(card) {
+        this._addEventListenerForImagePopup(card, this._onClickByImage)
+        this._addEventListenerForLike(card)
+        this._addEventListenerForTrashButton(card)
     }
 
     _getElement() {
