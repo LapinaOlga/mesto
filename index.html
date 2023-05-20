@@ -57,15 +57,25 @@
         <form class="popup__form" name="profileForm" novalidate>
             <div class="popup__area">
                 <label class="popup__label">
-                    <input id="name-input" type="text" class="popup__item popup__item_el_name" minlength="2"
+                    <input id="name-input"
+                           type="text"
+                           class="popup__item popup__item_el_name"
+                           minlength="2"
                            maxlength="40"
-                           required>
+                           required
+                           name="name"
+                    >
                     <span class="name-input-error popup__error"></span>
                 </label>
                 <label class="popup__label">
-                    <input id="profession-input" type="text" class="popup__item popup__item_el_profession" minlength="2"
+                    <input id="profession-input"
+                           type="text"
+                           class="popup__item popup__item_el_profession"
+                           minlength="2"
                            maxlength="200"
-                           required>
+                           required
+                           name="profession"
+                    >
                     <span class="profession-input-error popup__error"></span>
                 </label>
             </div>
@@ -82,14 +92,25 @@
         <form class="popup__form" name="profileForm" novalidate>
             <div class="popup__area">
                 <label class="popup__label">
-                    <input id="location-input" type="text" class="popup__item popup__item_el_location" minlength="1"
+                    <input id="location-input"
+                           type="text"
+                           class="popup__item popup__item_el_location"
+                           minlength="1"
                            maxlength="30"
-                           required placeholder="Название">
+                           required
+                           placeholder="Название"
+                           name="name"
+                    >
                     <span class="location-input-error popup__error"></span>
                 </label>
                 <label class="popup__label">
-                    <input id="link-input" type="url" class="popup__item popup__item_el_link"
-                           required placeholder="Ссылка на картинку">
+                    <input id="link-input"
+                           type="url"
+                           class="popup__item popup__item_el_link"
+                           required
+                           placeholder="Ссылка на картинку"
+                           name="link"
+                    >
                     <span class="link-input-error popup__error"></span>
                 </label>
             </div>
@@ -106,6 +127,6 @@
         <p class="popup__description"></p>
     </div>
 </div>
-<script type="module" src="./scripts/index.js"></script>
+<script type="module" src="pages/index.js"></script>
 </body>
 </html>

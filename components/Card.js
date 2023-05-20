@@ -1,11 +1,16 @@
 class Card {
-    constructor(name, link, selectorTemplate, onClickByImage) {
+    constructor(name, link, selectorTemplate, handleCardClick) {
         this.name = name;
         this.link = link;
         this._selectorTemplate = selectorTemplate;
-        this._onClickByImage = onClickByImage;
+        this._handleCardClick = handleCardClick;
     }
 
+    /**
+     * Создает элемент карточки.
+     *
+     * @returns {Node}
+     */
     make() {
         const result = this._getElement()
         this._setEventListeners(result)
@@ -14,11 +19,15 @@ class Card {
     }
 
     _setEventListeners(card) {
-        this._addEventListenerForImagePopup(card, this._onClickByImage)
+        this._addEventListenerForImagePopup(card, this._handleCardClick)
         this._addEventListenerForLike(card)
         this._addEventListenerForTrashButton(card)
     }
 
+    /**
+     * @returns {Node}
+     * @private
+     */
     _getElement() {
         const cardTemplate = document.querySelector(this._selectorTemplate).content;
         const cardElement = cardTemplate.querySelector('.element').cloneNode(true);
@@ -34,7 +43,7 @@ class Card {
     _addEventListenerForImagePopup(element, listener) {
         element
             .querySelector('.element__image')
-            .addEventListener('click', () => listener(this))
+            .addEventListener('click', () => listener())
     }
 
     _addEventListenerForLike(element) {
