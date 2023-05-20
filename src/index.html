@@ -4,29 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mesto</title>
-    <link rel="stylesheet" href="pages/index.css">
 </head>
 <body>
 <div class="page">
     <header class="header">
-        <img class="header__logo" src="images/header-logo.svg" alt="Лого Mesto">
+        <img class="header__logo" src="<%=require('./images/header-logo.svg')%>" alt="Лого Mesto">
         <div class="header__line"></div>
     </header>
     <main class="main">
         <section class="profile">
-            <img class="profile__avatar" src="images/profile_avatar.jpg" alt="Фото Кусто">
+            <img class="profile__avatar" src="<%=require('./images/profile_avatar.jpg')%>" alt="Фото Кусто">
             <div class="profile__info">
                 <div class="profile__area">
                     <h1 class="profile__title">Жак-Ив Кусто</h1>
                     <button class="profile__edit-button" type="button">
-                        <img class="profile__edit-button-image" src="images/vector-pencil.svg"
+                        <img class="profile__edit-button-image" src="<%=require('./images/vector-pencil.svg')%>"
                              alt="Картинка карандаш">
                     </button>
                 </div>
                 <p class="profile__subtitle">Исследователь океана</p>
             </div>
             <button class="profile__button" type="button">
-                <img class="profile__button-image" src="images/vector-cross.svg" alt="Картинка крест">
+                <img class="profile__button-image" src="<%=require('./images/vector-cross.svg')%>" alt="Картинка крест">
             </button>
         </section>
         <section class="elements">
@@ -51,7 +50,7 @@
 <div class="popup profile-popup">
     <div class="popup__container">
         <button class="popup__icon-close" type="button">
-            <img class="popup__icon-close-image" src="images/сlose-icon.png" alt="Закрывание окна">
+            <img class="popup__icon-close-image" src="<%=require('./images/сlose-icon.png')%>" alt="Закрывание окна">
         </button>
         <h2 class="popup__title">Редактировать профиль</h2>
         <form class="popup__form" name="profileForm" novalidate>
@@ -86,7 +85,7 @@
 <div class="popup card-popup">
     <div class="popup__container">
         <button class="popup__icon-close" type="button">
-            <img class="popup__icon-close-image" src="images/сlose-icon.png" alt="Закрывание окна">
+            <img class="popup__icon-close-image" src="<%=require('./images/сlose-icon.png')%>" alt="Закрывание окна">
         </button>
         <h2 class="popup__title">Новое место</h2>
         <form class="popup__form" name="profileForm" novalidate>
@@ -121,12 +120,11 @@
 <div class="popup image-popup">
     <div class="popup__container-image">
         <button class="popup__icon-close" type="button">
-            <img class="popup__icon-close-image" src="images/сlose-icon.png" alt="Закрывание окна">
+            <img class="popup__icon-close-image" src="<%=require('./images/сlose-icon.png')%>" alt="Закрывание окна">
         </button>
         <img class="popup__image" src="#" alt="#">
         <p class="popup__description"></p>
     </div>
 </div>
-<script type="module" src="pages/index.js"></script>
 </body>
 </html>

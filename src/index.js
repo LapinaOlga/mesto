@@ -1,11 +1,12 @@
 'use strict';
+import './index.css';
 
-import initialCards from "../components/cards.js";
-import Card from "../components/Card.js";
-import FormValidator from "../components/FormValidator.js";
-import PopupWithImage from "../components/PopupWithImage.js";
-import PopupWithForm from "../components/PopupWithForm.js";
-import UserInfo from "../components/UserInfo.js";
+import initialCards from "./components/cards.js";
+import Card from "./components/Card.js";
+import FormValidator from "./components/FormValidator.js";
+import PopupWithImage from "./components/PopupWithImage.js";
+import PopupWithForm from "./components/PopupWithForm.js";
+import UserInfo from "./components/UserInfo.js";
 
 const profileEditButton = document.querySelector('.profile__edit-button');
 const profileButton = document.querySelector('.profile__button');

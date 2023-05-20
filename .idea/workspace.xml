@@ -2,18 +2,78 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d8191f3e-c4fc-4e1f-b424-62f4b7d624a9" name="Default Changelist" comment="Добавлен  gitignore">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/Popup.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/PopupWithForm.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/PopupWithImage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/Section.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/UserInfo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/babel.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/postcss.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/Card.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Card.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/FormValidator.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/FormValidator.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/cards.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/cards.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/element/__area/element__area.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/blocks/element/__area/element__area.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/element/__button/_active/element__button_active.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/blocks/element/__button/_active/element__button_active.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/element/__button/element__button.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/blocks/element/__button/element__button.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/element/__image-button/element__image-button.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/blocks/element/__image-button/element__image-button.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/element/__image/element__image.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/blocks/element/__image/element__image.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/element/__title/element__title.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/blocks/element/__title/element__title.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/element/element.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/blocks/element/element.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/element/trash-button/element__trash-button.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/blocks/element/trash-button/element__trash-button.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/elements/elements.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/blocks/elements/elements.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/footer/__copyright/footer__copyright.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/blocks/footer/__copyright/footer__copyright.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/footer/footer.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/blocks/footer/footer.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/header/__line/header__line.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/blocks/header/__line/header__line.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/header/__logo/header__logo.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/blocks/header/__logo/header__logo.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/header/header.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/blocks/header/header.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/main/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/blocks/main/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/page/page.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/blocks/page/page.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/popup/__area/popup__area.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/blocks/popup/__area/popup__area.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/popup/__button/_disabled/popup__button_disabled.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/blocks/popup/__button/_disabled/popup__button_disabled.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/popup/__button/popup__button.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/blocks/popup/__button/popup__button.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/popup/__container-image/popup__container-image.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/blocks/popup/__container-image/popup__container-image.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/popup/__container/popup__container.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/blocks/popup/__container/popup__container.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/popup/__description/popup__description.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/blocks/popup/__description/popup__description.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/popup/__error/popup__error.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/blocks/popup/__error/popup__error.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/popup/__form/popup__form.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/blocks/popup/__form/popup__form.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/popup/__icon-close-image/popup__icon-close-image.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/blocks/popup/__icon-close-image/popup__icon-close-image.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/popup/__icon-close/popup__icon-close.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/blocks/popup/__icon-close/popup__icon-close.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/popup/__image/popup__image.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/blocks/popup/__image/popup__image.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/popup/__item/_type_error/popup__item_type_error.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/blocks/popup/__item/_type_error/popup__item_type_error.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/popup/__item/popup__item.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/blocks/popup/__item/popup__item.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/popup/__label/popup__label.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/blocks/popup/__label/popup__label.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/popup/__title/popup__title.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/blocks/popup/__title/popup__title.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/popup/_opened/popup_opened.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/blocks/popup/_opened/popup_opened.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/popup/image-popup/image-popup.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/blocks/popup/image-popup/image-popup.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/popup/popup.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/blocks/popup/popup.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/profile/__area/profile__area.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/blocks/profile/__area/profile__area.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/profile/__avatar/profile__avatar.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/blocks/profile/__avatar/profile__avatar.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/profile/__button-image/profile__button-image.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/blocks/profile/__button-image/profile__button-image.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/profile/__button/profile__button.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/blocks/profile/__button/profile__button.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/profile/__edit-button-image/profile__edit-button-image.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/blocks/profile/__edit-button-image/profile__edit-button-image.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/profile/__edit-button/profile__edit-button.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/blocks/profile/__edit-button/profile__edit-button.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/profile/__info/profile__info.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/blocks/profile/__info/profile__info.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/profile/__subtitle/profile__subtitle.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/blocks/profile/__subtitle/profile__subtitle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/profile/__title/profile__title.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/blocks/profile/__title/profile__title.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/profile/profile.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/blocks/profile/profile.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Card.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Card.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/FormValidator.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FormValidator.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Popup.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Popup.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/PopupWithForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PopupWithForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/PopupWithImage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PopupWithImage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Section.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Section.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/UserInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UserInfo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/cards.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/cards.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Dombay.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/images/Dombay.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Elbrus.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/images/Elbrus.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Karachayevsk.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/images/Karachayevsk.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/header-logo.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/images/header-logo.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/profile_avatar.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/images/profile_avatar.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/trash.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/images/trash.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/vector-cross.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/images/vector-cross.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/vector-heart-black.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/images/vector-heart-black.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/vector-heart.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/images/vector-heart.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/vector-pencil.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/images/vector-pencil.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/сlose-icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/images/сlose-icon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,15 +148,15 @@
       <recent name="$PROJECT_DIR$/images" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/pages" />
       <recent name="$PROJECT_DIR$/blocks/popup" />
       <recent name="$PROJECT_DIR$/blocks/popup/__item" />
       <recent name="$PROJECT_DIR$/scripts" />
-      <recent name="$PROJECT_DIR$/blocks" />
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="index.js" type="NodeJSConfigurationType" path-to-node="/usr/local/opt/node@14/bin/node" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/pages/index.js" working-dir="$PROJECT_DIR$">
+    <configuration name="index.js" type="NodeJSConfigurationType" path-to-node="/usr/local/opt/node@14/bin/node" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/src/index.js" working-dir="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
   </component>
@@ -142,7 +202,7 @@
       <workItem from="1680814021911" duration="52000" />
       <workItem from="1682235962691" duration="24601000" />
       <workItem from="1683647441868" duration="8944000" />
-      <workItem from="1684571545615" duration="10977000" />
+      <workItem from="1684571545615" duration="14031000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1677066119615</created>
@@ -445,7 +505,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682619520707</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="Созданы классы">
+      <created>1684585199325</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1684585199325</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -464,7 +531,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Прописан README.md, добавлены правки" />
     <MESSAGE value="Исправлены ошибки после второго ревью" />
     <MESSAGE value="Реализованы карточки и лайки" />
     <MESSAGE value="Добавлено удаление карточки и открытие попапа-картинки" />
@@ -489,6 +555,7 @@
     <MESSAGE value="Исправлены ошибки после третьего кода-ревью" />
     <MESSAGE value="Сделана разбивка проекта нп модули" />
     <MESSAGE value="Исправлены ошибки после первого ревью" />
-    <option name="LAST_COMMIT_MESSAGE" value="Исправлены ошибки после первого ревью" />
+    <MESSAGE value="Созданы классы" />
+    <option name="LAST_COMMIT_MESSAGE" value="Созданы классы" />
   </component>
 </project>
