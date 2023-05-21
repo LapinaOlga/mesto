@@ -1,4 +1,4 @@
-class Section {
+ export default class Section {
 
     constructor(settings, selector) {
         this._settings = settings;
@@ -6,10 +6,12 @@ class Section {
     }
 
     render() {
-
+        this._settings.items.forEach((item) => {
+            this.addItem(this._settings.renderer(item))
+        });
     }
 
-    addItem() {
-
+    addItem(item) {
+        this._container.prepend(item);
     }
 }

@@ -1,5 +1,5 @@
 'use strict';
-import './index.css';
+import './pages/index.css';
 
 import initialCards from "./components/cards.js";
 import Card from "./components/Card.js";
@@ -7,6 +7,7 @@ import FormValidator from "./components/FormValidator.js";
 import PopupWithImage from "./components/PopupWithImage.js";
 import PopupWithForm from "./components/PopupWithForm.js";
 import UserInfo from "./components/UserInfo.js";
+import Section from "./components/Section.js";
 
 const profileEditButton = document.querySelector('.profile__edit-button');
 const profileButton = document.querySelector('.profile__button');
@@ -14,7 +15,6 @@ const inputUserName = document.querySelector('input.popup__item_el_name');
 const inputUserProfession = document.querySelector('input.popup__item_el_profession');
 const profileForm = document.querySelector('.profile-popup form');
 const cardForm = document.querySelector('.card-popup form');
-const cardElements = document.querySelector('.elements');
 
 const selectorTemplate = '#elements';
 
@@ -39,39 +39,47 @@ const profilePopup = new PopupWithForm('.profile-popup', '.popup__button', funct
 profilePopup.setEventListeners();
 
 const cardPopup = new PopupWithForm('.card-popup', '.popup__button', (formData) => {
-    addCard(
-        createCard(formData)
-    );
-})
+    addCard(formData);
+});
 cardPopup.setEventListeners();
 
-const profileFormValidator = new FormValidator(validatorSettings, profileForm)
-profileFormValidator.enableValidation()
+const imagePopup = new PopupWithImage('.image-popup');
+imagePopup.setEventListeners();
 
-const cardFormValidator = new FormValidator(validatorSettings, cardForm)
-cardFormValidator.enableValidation()
+const profileFormValidator = new FormValidator(validatorSettings, profileForm);
+profileFormValidator.enableValidation();
+
+const cardFormValidator = new FormValidator(validatorSettings, cardForm);
+cardFormValidator.enableValidation();
+
+const section = new Section({
+    items: initialCards,
+    renderer: createCard
+}, ".elements")
+
+section.render();
 
 /**
  * Создает элемент карточки
- * @param {Object} data
+ * @param {Object} rawCard
  * @returns {Node}
  */
-function createCard(data) {
-    const card = new Card(data.name, data.link, selectorTemplate, function () {
-        const popup = new PopupWithImage('.image-popup');
-        popup.setEventListeners()
-        popup.open(data)
+function createCard(rawCard) {
+    const card = new Card(rawCard.name, rawCard.link, selectorTemplate, function () {
+        imagePopup.open(rawCard);
     })
 
-    return card.make()
+    return card.make();
 }
 
 /**
  * Добавляет карточку на страницу
- * @param {Node} newCard
+ * @param {Object} rawCard
  */
-function addCard(newCard) {
-    cardElements.prepend(newCard);
+function addCard(rawCard) {
+    section.addItem(
+        createCard(rawCard)
+    );
 }
 
 // Открываем попап и добавляем текст из профиля в попап
@@ -92,6 +100,3 @@ profileButton.addEventListener('click', function () {
     cardPopup.open()
 });
 
-initialCards.forEach(function (item) {
-    addCard(createCard(item))
-})
