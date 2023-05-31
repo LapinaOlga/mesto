@@ -1,10 +1,10 @@
 .profile__avatar-button {
-    max-width: 120px;
-    max-height: 120px;
-    border-radius: 50%;
+    width: 120px;
+    height: 120px;
     border: none;
     padding: 0;
     position: relative;
+    background: transparent;
 }
 
 .profile__avatar-button::after {

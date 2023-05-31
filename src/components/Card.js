@@ -1,9 +1,20 @@
 class Card {
-    constructor(name, link, selectorTemplate, handleCardClick) {
-        this.name = name;
-        this.link = link;
+    constructor(
+        card,
+        selectorTemplate,
+        currentUser,
+        handleCardClick,
+        handleCardRemove,
+        handleLikeClick,
+        handleConfirm,
+    ) {
+        this._card = card;
         this._selectorTemplate = selectorTemplate;
         this._handleCardClick = handleCardClick;
+        this._handleCardRemove = handleCardRemove;
+        this._handleLikeClick = handleLikeClick;
+        this._handleConfirm = handleConfirm;
+        this._currentUser = currentUser;
     }
 
     /**
@@ -18,13 +29,24 @@ class Card {
         return result;
     }
 
-    _setEventListeners(card) {
-        this._addEventListenerForImagePopup(card, this._handleCardClick)
-        this._addEventListenerForLike(card)
-        this._addEventListenerForTrashButton(card)
+    /**
+     * Добавляет события для указанного элемента карточи.
+     *
+     * @param {Node} cardElement
+     * @private
+     */
+    _setEventListeners(cardElement) {
+        this._addEventListenerForImagePopup(cardElement, this._handleCardClick)
+        this._addEventListenerForLike()
+
+        if (this._card.owner._id === this._currentUser.getUserInfo().id) {
+            this._addEventListenerForTrashButton()
+        }
     }
 
     /**
+     * Формирует и возвращает элемент карточки.
+     *
      * @returns {Node}
      * @private
      */
@@ -33,35 +55,93 @@ class Card {
         const cardElement = cardTemplate.querySelector('.element').cloneNode(true);
         const cardImage = cardElement.querySelector('.element__image');
         const cardTitle = cardElement.querySelector('.element__title');
-        cardImage.src = this.link;
-        cardImage.setAttribute('alt', this.name)
-        cardTitle.textContent = this.name;
+        cardImage.src = this._card.link;
+        cardImage.setAttribute('alt', this._card.name)
+        cardTitle.textContent = this._card.name;
+
+        this._trashButton = cardElement.querySelector('.element__trash-button');
+        this._likeButton = cardElement.querySelector('.element__button');
+        this._likeNumber = cardElement.querySelector('.element__text');
+
+        if (this._card.owner._id !== this._currentUser.getUserInfo().id) {
+            this._trashButton.remove();
+        }
+
+        for (const user of this._card.likes) {
+            if (user._id === this._currentUser.getUserInfo().id) {
+                this._toggleLikeButton()
+                break;
+            }
+        }
+
+        this._changeNumberOfLikes();
 
         return cardElement;
     }
 
-    _addEventListenerForImagePopup(element, listener) {
-        element
+    /**
+     * Добавляет события для изображения карточки.
+     *
+     * @param cardElement
+     * @param listener
+     * @private
+     */
+    _addEventListenerForImagePopup(cardElement, listener) {
+        cardElement
             .querySelector('.element__image')
             .addEventListener('click', () => listener())
     }
 
-    _addEventListenerForLike(element) {
-        element
-            .querySelector('.element__button')
-            .addEventListener('click', function (event) {
-                event.target.classList.toggle('element__button_active');
-            })
+    /**
+     * Добавляет события для кнопки "like".
+     *
+     * @private
+     */
+    _addEventListenerForLike() {
+        this._likeButton.addEventListener('click', (event) => {
+            const isActive = event.target.classList.contains('element__button_active');
+
+            this._handleLikeClick(this._card, isActive).then((card) => {
+                this._card = card;
+                this._changeNumberOfLikes();
+                this._toggleLikeButton();
+            });
+        })
     }
 
-    _addEventListenerForTrashButton(element) {
-        element
-            .querySelector('.element__trash-button')
-            .addEventListener('click', function (event) {
-                event.target.closest('.element').remove();
-            })
+    /**
+     * Добавляет события для кнопки удаения.
+     *
+     * @private
+     */
+    _addEventListenerForTrashButton() {
+        this._trashButton.addEventListener('click', (event) => {
+            this._handleConfirm(this._card)
+                .then(() => {
+                    this._handleCardRemove(this._card).then(() => {
+                        event.target.closest('.element').remove();
+                    });
+                });
+        })
     }
 
+    /**
+     * Меняет состояние кнопки "like".
+     *
+     * @private
+     */
+    _toggleLikeButton() {
+        this._likeButton.classList.toggle('element__button_active');
+    }
+
+    /**
+     * Изменяет количество лайков в карточе.
+     *
+     * @private
+     */
+    _changeNumberOfLikes() {
+        this._likeNumber.textContent = this._card.likes.length;
+    }
 }
 
 export default Card;
