@@ -5,7 +5,7 @@ export default class UserInfo {
         this._avatarElement = document.querySelector(selectors.avatar)
     }
 
-    getUserInfo(){
+    getUserInfo() {
         return {
             name: this._nameElement.textContent,
             about: this._aboutElement.textContent,
@@ -13,10 +13,21 @@ export default class UserInfo {
         }
     }
 
-    setUserInfo(userInfo){
-        this._nameElement.textContent = userInfo.name;
-        this._aboutElement.textContent = userInfo.about;
-        this._avatarElement.setAttribute('src', userInfo.avatar);
-        this._id = userInfo._id;
+    setUserInfo(userInfo) {
+        if (userInfo.name) {
+            this._nameElement.textContent = userInfo.name;
+        }
+
+        if (userInfo.about) {
+            this._aboutElement.textContent = userInfo.about;
+        }
+
+        if (userInfo.avatar) {
+            this._avatarElement.setAttribute('src', userInfo.avatar);
+        }
+
+        if (userInfo._id) {
+            this._id = userInfo._id;
+        }
     }
 }

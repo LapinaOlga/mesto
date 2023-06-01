@@ -9,13 +9,18 @@ class FormValidator {
 
     enableValidation() {
         // Блокируем кнопку,потому что пользователь еще ничего не ввел
-        this._disableButton();
+        this.disableSubmitButton();
         this._setEventListeners();
     }
 
-    _disableButton() {
+    disableSubmitButton() {
         this._getButtonElement().classList.add(this._settings.inactiveButtonClass);
         this._getButtonElement().setAttribute('disabled', 'disabled');
+    }
+
+    enableSubmitButton() {
+        this._getButtonElement().classList.remove(this._settings.inactiveButtonClass);
+        this._getButtonElement().removeAttribute('disabled');
     }
 
     _setEventListeners() {
@@ -65,10 +70,9 @@ class FormValidator {
 
     _toggleButtonState() {
         if (this._hasInvalidInput()) {
-            this._disableButton()
+            this.disableSubmitButton();
         } else {
-            this._getButtonElement().classList.remove(this._settings.inactiveButtonClass);
-            this._getButtonElement().removeAttribute('disabled');
+            this.enableSubmitButton();
         }
     }
 

@@ -8,6 +8,7 @@ import UserInfo from "./components/UserInfo.js";
 import Section from "./components/Section.js";
 import Api from "./components/Api.js";
 import PopupWithConfirmation from "./components/PopupWithConfirmation";
+import {renderLoading} from "./utils/utils";
 
 const profileEditButton = document.querySelector('.profile__edit-button');
 const profileButton = document.querySelector('.profile__button');
@@ -43,70 +44,6 @@ const userInfoInstance = new UserInfo({
     avatar: '.profile__avatar',
 })
 
-const profilePopup = new PopupWithForm('.profile-popup', '.popup__button', function (formData) {
-    api.updateUser(formData)
-        .then((user) => {
-            userInfoInstance.setUserInfo(user);
-        })
-        .catch((error) => {
-            console.log('Сервер вернул ошибку', error);
-        })
-        .finally(() => {
-            profilePopup.close();
-        });
-});
-
-profilePopup.setEventListeners();
-
-const cardPopup = new PopupWithForm(
-    '.card-popup',
-    '.popup__button',
-    (formData, submitButton) => {
-        submitButton.textContent = 'Сохранение...';
-        submitButton.setAttribute('disabled', true);
-
-        api.createCard(formData)
-            .then((card) => {
-                addCard(card)
-            })
-            .catch((error) => {
-                console.log('Сервер вернул ошибку', error);
-            })
-            .finally(() => {
-                cardPopup.close();
-
-                submitButton.textContent = 'Создать';
-                submitButton.setAttribute('disabled', false);
-            });
-    });
-cardPopup.setEventListeners();
-
-const imagePopup = new PopupWithImage('.image-popup');
-imagePopup.setEventListeners();
-
-const avatarPopup = new PopupWithForm(
-    '.update-popup',
-    '.popup__button',
-    (formData, submitButton) => {
-        submitButton.textContent = 'Сохранение...';
-        submitButton.setAttribute('disabled', true);
-
-        api.updateUserAvatar(formData.link)
-            .then((user) => {
-                userInfoInstance.setUserInfo(user);
-            })
-            .catch((error) => {
-                console.log('Сервер вернул ошибку', error);
-            })
-            .finally(() => {
-                avatarPopup.close();
-
-                submitButton.textContent = 'Создать';
-                submitButton.setAttribute('disabled', false);
-            });
-    });
-avatarPopup.setEventListeners();
-
 const confirmPopup = new PopupWithConfirmation('.confirm-popup', '.popup__button');
 confirmPopup.setEventListeners();
 
@@ -119,9 +56,67 @@ cardFormValidator.enableValidation();
 const avatarFormValidator = new FormValidator(validatorSettings, avatarPopupForm);
 avatarFormValidator.enableValidation();
 
-const section = new Section({items: [], renderer: createCard}, ".elements")
+let section;
 
-section.render();
+const profilePopup = new PopupWithForm('.profile-popup', '.popup__button', function (formData) {
+    api.updateUser(formData)
+        .then((user) => {
+            userInfoInstance.setUserInfo(user);
+            profilePopup.close();
+        })
+        .catch((error) => {
+            console.log('Сервер вернул ошибку', error);
+        });
+});
+
+profilePopup.setEventListeners();
+
+const cardPopup = new PopupWithForm(
+    '.card-popup',
+    '.popup__button',
+    (formData, submitButton) => {
+        renderLoading(submitButton, 'Сохранение...')
+        cardFormValidator.disableSubmitButton();
+
+        api.createCard(formData)
+            .then((card) => {
+                addCard(card);
+                cardPopup.close();
+            })
+            .catch((error) => {
+                console.log('Сервер вернул ошибку', error);
+            })
+            .finally(() => {
+                renderLoading(submitButton, 'Создать');
+                cardFormValidator.enableSubmitButton();
+            });
+    });
+cardPopup.setEventListeners();
+
+const imagePopup = new PopupWithImage('.image-popup');
+imagePopup.setEventListeners();
+
+const avatarPopup = new PopupWithForm(
+    '.update-popup',
+    '.popup__button',
+    (formData, submitButton) => {
+        renderLoading(submitButton, 'Сохранение...');
+        avatarFormValidator.disableSubmitButton();
+
+        api.updateUserAvatar(formData.link)
+            .then((user) => {
+                userInfoInstance.setUserInfo(user);
+                avatarPopup.close();
+            })
+            .catch((error) => {
+                console.log('Сервер вернул ошибку', error);
+            })
+            .finally(() => {
+                renderLoading(submitButton, 'Создать');
+                avatarFormValidator.enableSubmitButton();
+            });
+    });
+avatarPopup.setEventListeners();
 
 /**
  * Создает элемент карточки
@@ -129,35 +124,47 @@ section.render();
  * @returns {Node}
  */
 function createCard(rawCard) {
-    const card = new Card(
+    const cardInstance = new Card(
         rawCard,
         selectorTemplate,
         userInfoInstance,
         function () {
             imagePopup.open(rawCard);
         },
-        function (card) {
-            return api.deleteCard(card._id);
-        },
-        function (card, isDeleting) {
-            if (isDeleting) {
-                return api.removeCardLike(card._id);
-            }
-
-            return api.addCardLike(card._id);
-        },
-        function () {
-            return new Promise((resolve, reject) => {
-                confirmPopup.open(
-                    function(isConfirmed){
-                        isConfirmed ? resolve() : reject();
+        function (card, onComplete) {
+            confirmPopup.open(
+                function (isConfirmed) {
+                    if (isConfirmed) {
+                        api.deleteCard(card._id)
+                            .then(() => {
+                                onComplete()
+                                confirmPopup.close();
+                            })
+                            .catch((error) => {
+                                console.log('Сервер вернул ошибку', error);
+                            });
+                    } else {
+                        confirmPopup.close();
                     }
-                )
-            });
+                }
+            )
+        },
+        function (card, isDeleting, onComplete) {
+            const promise = isDeleting
+                ? api.removeCardLike(card._id)
+                : api.addCardLike(card._id);
+
+            promise
+                .then((card) => {
+                    onComplete(card);
+                })
+                .catch((error) => {
+                    console.log('Сервер вернул ошибку', error);
+                });
         },
     )
 
-    return card.make();
+    return cardInstance.make();
 }
 
 /**
@@ -192,12 +199,19 @@ profileAvatarButton.addEventListener('click', function () {
     avatarPopup.open();
 });
 
-api.getUser().then((user) => {
-    userInfoInstance.setUserInfo(user);
+api.getUser()
+    .then((user) => {
+        userInfoInstance.setUserInfo(user);
 
-    api.getCardList().then((list) => {
-        list.reverse().forEach((card) => section.addItem(
-            createCard(card)
-        ));
+        api.getCardList()
+            .then((list) => {
+                section = new Section({items: list.reverse(), renderer: createCard}, ".elements")
+                section.renderItems();
+            })
+            .catch((error) => {
+                console.log('Сервер вернул ошибку', error);
+            });
+    })
+    .catch((error) => {
+        console.log('Сервер вернул ошибку', error);
     });
-});

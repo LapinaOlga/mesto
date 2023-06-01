@@ -6,14 +6,12 @@ class Card {
         handleCardClick,
         handleCardRemove,
         handleLikeClick,
-        handleConfirm,
     ) {
         this._card = card;
         this._selectorTemplate = selectorTemplate;
         this._handleCardClick = handleCardClick;
         this._handleCardRemove = handleCardRemove;
         this._handleLikeClick = handleLikeClick;
-        this._handleConfirm = handleConfirm;
         this._currentUser = currentUser;
     }
 
@@ -101,7 +99,7 @@ class Card {
         this._likeButton.addEventListener('click', (event) => {
             const isActive = event.target.classList.contains('element__button_active');
 
-            this._handleLikeClick(this._card, isActive).then((card) => {
+            this._handleLikeClick(this._card, isActive, (card) => {
                 this._card = card;
                 this._changeNumberOfLikes();
                 this._toggleLikeButton();
@@ -116,13 +114,10 @@ class Card {
      */
     _addEventListenerForTrashButton() {
         this._trashButton.addEventListener('click', (event) => {
-            this._handleConfirm(this._card)
-                .then(() => {
-                    this._handleCardRemove(this._card).then(() => {
-                        event.target.closest('.element').remove();
-                    });
-                });
-        })
+            this._handleCardRemove(this._card, () => {
+                event.target.closest('.element').remove();
+            });
+        });
     }
 
     /**
